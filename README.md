@@ -1,1 +1,1 @@
-# CS326-Final-team-mu
+# cs326-final-teammu
