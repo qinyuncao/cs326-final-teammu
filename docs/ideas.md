@@ -9,7 +9,7 @@ HallAdvisor
 
 - Moiz Saqib : **moizsaqib369**
 
-- Yingxun Wei : **insert github username here**
+- Yingxun Wei : **Laurenwei**
 
 ### **Innovative Idea**:
 The second section titled Innovative Idea which provides a brief paragraph or two describing your application and how it relates to other existing applications. If your application does not relate to an existing application then mention that.
