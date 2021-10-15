@@ -2,7 +2,7 @@
 Team Mu
 
 ### **Application Name**: 
-HallAdvisor
+UMA DormReview
 
 ### **Team Overview**:
 - Qinyun Cao : **qinyuncao**
