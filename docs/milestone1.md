@@ -24,5 +24,11 @@ This is the wireframe for the rate score of a residential hall/review page after
 This is the wireframe for the 'write a review' page. Here, a user selects which hall they are reviewing. Then, they rate the hall on five factors on a scale of 1-20. The user also types a more detailed, long-form review. Additionally, the user provides at least one tag which will benefit the search function at the top of site.
 ![Wireframe of Write A Review Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/writereviewframe.png?raw=true)
 
+This is the wireframe for the Log In page. Here, the user would enter their username and password to log in to the site. This would allow the user the ability to write reviews as well as interact with a review by liking or disliking.
+![Wireframe of Rating/Review Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/loginframe.png?raw=true)
+
+This is the wireframe for the Sign Up page. Here, the user would enter their UMASS email address, a username, password, and the password re-entered to create an account for the site.
+![Wireframe of Rating/Review Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/signupframe.png?raw=true)
+
 ### **HTML Page**:
 Screenshots here
