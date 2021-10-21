@@ -1,0 +1,94 @@
+body {
+    background-color: gainsboro;
+}
+.top {
+    font-weight: bolder;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+.rank {
+    padding: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-weight: bolder;
+    font-size:x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    background: burlywood;
+    border: 3px solid black;
+    text-align: center;
+}
+.hall {
+    font-weight: bolder;
+    font-size:x-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.score {
+    padding-left: 15px;
+    float: right;
+    height: 36px;
+    width: 600px;
+    background: linear-gradient(to right, maroon 0%, maroon 85%, lightgray 85%, lightgray 100%);
+    font-size: xx-large;
+    color: burlywood;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border: 3px solid black;
+}
+.rank, .hall {display: inline;}
+.reviewinfo {
+    border: 3px solid black;
+}
+.score2 {
+    font-size:49px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    padding-left: 15px;
+}
+.based {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    padding-left: 10px;
+}
+.score2, .based {display: inline;}
+.rateandreview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.cats {
+    padding-left: 25px;
+    font-size:larger;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.scorerate {
+    padding-left: 25px;
+    color: burlywood;
+    border: 3px solid black;
+    font-size:larger;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    height: 24px;
+    width: 570px;
+    line-height: 24px;
+}
+#convscore {
+    background: linear-gradient(to right, maroon 0%, maroon 70%, lightgray 70%, lightgray 100%);
+}
+#comfscore {
+    background: linear-gradient(to right, maroon 0%, maroon 80%, lightgray 80%, lightgray 100%);
+}
+#privscore {
+    background: linear-gradient(to right, maroon 0%, maroon 100%, lightgray 100%, lightgray 100%);
+}
+#facscore {
+    background: linear-gradient(to right, maroon 0%, maroon 85%, lightgray 85%, lightgray 100%);
+}   
+#cleanscore {
+    background: linear-gradient(to right, maroon 0%, maroon 90%, lightgray 90%, lightgray 100%);
+}
