@@ -53,6 +53,10 @@ nav img{
     width: 100%;
 }
 
+body {
+    background-color: gainsboro;
+}
+
 .top {
     font-weight: bolder;
     font-size: xx-large;
