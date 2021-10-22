@@ -1,0 +1,70 @@
+.top {
+    font-weight: bolder;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.rank1 {
+    height: 35px;
+    width: 35px;
+    padding: 9px;
+    text-align: center; 
+    border-radius: 50%;
+    display: inline-block;
+    color:black;
+    font-size:x-large;
+    font-weight:500;
+    background-color: #CE4747;
+    margin-left: 20px;
+}
+.hallname1 {
+    border-radius: 5px;
+    background: #FFCC66;
+    text-align: center; 
+    display: inline-block;
+    font-size:x-large;
+    font-weight:500;
+    padding: 12px;
+    width: 450px;
+    height: 35px;
+    margin-left: 30px;
+}
+.rank2 {
+    height: 28px;
+    width: 28px;
+    padding: 6px;
+    text-align: center; 
+    border-radius: 50%;
+    display: inline-block;
+    color:black;
+    font-size:large;
+    font-weight:500;
+    background-color: #CE4747;
+    margin-left: 26px;
+}
+.hallname2 {
+    border-radius: 5px;
+    background: #FFCC66;
+    text-align: center; 
+    display: inline-block;
+    font-size:large;
+    font-weight:500;
+    padding: 10px;
+    width: 400px;
+    height: 16px;
+    margin-left: 55px;
+    margin-right: 35px
+}
+
+progress {
+    border-radius: 2px;
+    width: 600px;
+    height: 30px;
+    margin-left: 120px;
+}
+
+progress::-webkit-progress-bar {
+    background: #CCCCCC;
+}
+progress::-webkit-progress-value {
+    background: #CE4747;
+}
