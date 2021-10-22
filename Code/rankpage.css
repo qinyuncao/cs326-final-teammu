@@ -59,7 +59,7 @@ progress {
     border-radius: 2px;
     width: 600px;
     height: 30px;
-    margin-left: 120px;
+    margin-left: 100px;
 }
 
 progress::-webkit-progress-bar {
@@ -86,4 +86,10 @@ progress::-webkit-progress-value {
     font-size: 23px;
     text-align: center;
     transform: rotate(90deg);
+}
+.arrow:hover{
+    height: 32px;
+    width: 32px;
+    border: 6px solid #404044;
+    margin-left: 18px;
 }
