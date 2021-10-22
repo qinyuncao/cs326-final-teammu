@@ -52,7 +52,6 @@ nav img{
 .nav-links ul li:hover::after{
     width: 100%;
 }
-
 body {
     background-color: gainsboro;
 }
@@ -113,6 +112,7 @@ body {
 .rateandreview {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 10px;
 }
 .cats {
     padding-left: 25px;
@@ -146,4 +146,52 @@ body {
 }   
 #cleanscore {
     background: linear-gradient(to right, maroon 0%, maroon 90%, lightgray 90%, lightgray 100%);
+}
+.revs2 {
+    font-size:larger;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+.reviewcontent {
+    border: 3px solid black;
+    padding-left: 10px;
+    padding-bottom: 21px;
+}
+.revtext {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+.vote {
+    font-size:small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.likedis {
+    float: right;
+    padding-right: 12px;
+}
+.resize {
+    width:27px;
+    height: auto;
+    padding-left: 20px;
+}
+.likedislike {
+    font-size:x-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tags {
+    padding-left: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.struc {
+    padding-left: 12px;
+}
+.tagtext {
+    padding: 6px;
+    border: 2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    font-weight: bold;
 }
