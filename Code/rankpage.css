@@ -68,3 +68,22 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
     background: #CE4747;
 }
+
+.arrow {
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border: 5px solid grey;
+    margin-left: 20px;
+}
+.arrow::after {
+    content:"\276F";
+    display: block;
+    color: grey;
+    font-weight: bold;
+    font-size: 23px;
+    text-align: center;
+    transform: rotate(90deg);
+}
