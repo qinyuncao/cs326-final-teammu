@@ -1,7 +1,63 @@
+*{
+    font-family: 'Andada Pro', serif;
+}
+.header{
+    min-height: 3vh;
+    width : 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 200px;
+
+}
+
+.nav-links{
+
+    flex:1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 6px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    margin: 10px;
+    color: black;
+    text-decoration: blanchedalmond;
+    font-size: 30px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: white;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
 .top {
     font-weight: bolder;
     font-size: xx-large;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Andada Pro', serif;
+    
 }
 .rank1 {
     height: 35px;
