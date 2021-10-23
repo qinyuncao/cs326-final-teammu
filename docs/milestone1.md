@@ -35,3 +35,8 @@ This is the wireframe for the Sign Up page. Here, the user would enter their UMA
 
 ### **HTML Page**:
 Screenshots here
+
+### **Breakdown of the Division of Labor**:
+Qinyun Cao:
+Moiz Saqib:
+Yingxun Wei:
