@@ -120,6 +120,7 @@ progress {
     width: 600px;
     height: 30px;
     margin-left: 100px;
+    text-align: left;
 }
 
 progress::-webkit-progress-bar {
