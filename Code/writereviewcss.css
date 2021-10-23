@@ -1,0 +1,67 @@
+*{
+    font-family: 'Andada Pro', serif;
+}
+.header{
+    min-height: 0vh;
+    width : 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+nav img{
+    width: 200px;
+}
+
+.nav-links{
+    flex:1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 6px 12px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    margin: 10px;
+    color: black;
+    text-decoration: blanchedalmond;
+    font-size: 30px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: white;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+body {
+    background-color: gainsboro;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+.top {
+    font-weight: bolder;
+    font-size: xx-large;      
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

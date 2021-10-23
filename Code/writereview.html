@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <title>Write A Review</title>
+        <link rel="stylesheet" href="writereviewcss.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@1,500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <section class ="header">
+            <nav>
+                <a href="mainPage.html"><img src="images/logo.jpeg" width="300"></a>
+                <div class = "nav-links">
+                    <ul>
+                        <li><a href=""></a>Write a<br>Review</li>
+                        <li><a href=""></a>Residential Hall<br>Ranking</li>
+                        <li><a href=""></a>Log in</li>
+                        <li><a href=""></a>Sign up</li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <p class="top">Write A Review</p>
+        <div class="revform">
+            <label for="halls">Select A Residential Hall: </label>
+            <select id="halls">
+                <option value="baker">Baker Hall</option>
+                <option value="brett">Brett Hall</option>
+                <option value="brooks">Brooks Hall</option>
+                <option value="butterfield">Butterfield Hall</option>
+                <option value="chadbourne">Chadbourne Hall</option>
+                <option value="gorman">Gorman Hall</option>
+                <option value="Greenough">Greenough Hall</option>
+                <option value="vanmeter">Van Meter Hall</option>
+                <option value="wheeler">Wheeler Hall</option>
+                <option value="birch">Birch Hall</option>
+                <option value="elm">Elm Hall</option>
+                <option value="linden">Linden Hall</option>
+                <option value="maple">Maple Hall</option>
+                <option value="oak">Oak Hall</option>
+                <option value="sycamore">Sycamore Hall</option>
+                <option value="crabtree">Crabtree Hall</option>
+                <option value="dwight">Dwight Hall</option>
+                <option value="hamlin">Hamlin Hall</option>
+                <option value="johnson">Johnson Hall</option>
+                <option value="knowlton">Knowlton Hall</option>
+                <option value="leach">Leach Hall</option>
+                <option value="lewis">Lewis Hall</option>
+                <option value="marylyon">Mary Lyon Hall</option>
+                <option value="thatcher">Thatcher Hall</option>
+                <option value="dickinson">Dickinson Hall</option>
+                <option value="field">Field Hall</option>
+                <option value="Grayson">grayson Hall</option>
+                <option value="webster">Webster Hall</option>
+                <option value="cance">Cance Hall</option>
+                <option value="coolidge">Coolidge Hall</option>
+                <option value="crampton">Crampton Hall</option>
+                <option value="emerson">Emerson Hall</option>
+                <option value="james">James Hall</option>
+                <option value="johnadams">John Adams Hall</option>
+                <option value="johnquincyadams">John Quincy Adams Hall</option>
+                <option value="kennedy">Kennedy Hall</option>
+                <option value="mackimmie">MacKimmie Hall</option>
+                <option value="melville">Melville Hall</option>
+                <option value="moore">Moore Hall</option>
+                <option value="patterson">Patterson Hall</option>
+                <option value="pierpont">Pierpont Hall</option>
+                <option value="prince">Prince Hall</option>
+                <option value="thoreau">Thoreau Hall</option>
+                <option value="washington">Washington Hall</option>
+                <option value="brown">Brown Hall</option>
+                <option value="cashin">Cashin Hall</option>
+                <option value="mcnamara">McNamara Hall</option>
+            </select>
+            <div class="grid">
+                <div class="grades">
+                    <p>Please rate your experience in the selected residential hall through the following factors on a scale of 1-20:</p>
+                    <label for="grade">Convenience:</label>
+                    <input type="range" value="1" id="grade" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+                    <output>1</output>
+                    <br>
+                    <label for="grade">Comfort:</label>
+                    <input type="range" value="1" id="grade" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+                    <output>1</output>
+                    <br>
+                    <label for="grade">Facility:</label>
+                    <input type="range" value="1" id="grade" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+                    <output>1</output>
+                    <br>
+                    <label for="grade">Cleanliness:</label>
+                    <input type="range" value="1" id="grade" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+                    <output>1</output>
+                    <br>
+                    <label for="grade">Privacy:</label>
+                    <input type="range" value="1" id="grade" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+                    <output>1</output>
+                </div>
+                <div class="reviewtext">
+                    <label for="halltextrev">Enter a more detailed review:</label>
+                    <br>
+                    <textarea id="halltextrev" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <label for="tagtext">Enter tag(s) for your review, separated by a space:</label>
+            <textarea id="tagtext" rows="1" cols="90"></textarea>
+        </div>
+    </body>
+</html>
