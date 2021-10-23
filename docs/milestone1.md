@@ -11,6 +11,9 @@ UMA DormReview
 
 - Yingxun Wei : **Laurenwei**
 
+### **Data Interactions**:
+Data interactions have not changed and thus, are the same as those submitted for Milestone 0.
+
 ### **Wireframes**:
 This is the wireframe for our home page. It has a simple design, with the ability to log in or sign up at the top right, and write a review, and check Residential hall ranking. The ability to select a residence hall and be taken to the corresponding rating/review page. There are also some images of halls on campus to provide a pleasant and functional aesthetic to the site.
 ![Wireframe of Home Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/homeframe.png?raw=true)
