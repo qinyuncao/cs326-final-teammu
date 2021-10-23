@@ -45,22 +45,16 @@ nav img{
 .nav-links ul li:hover::after{
     width: 100%;
 }
+
 body {
-    background-color: gainsboro;
+    background-image: linear-gradient(rgb(238, 225, 207), rgb(255, 209, 149));
     padding-left: 75px;
     padding-right: 75px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.top {
-    font-weight: bolder;
-    font-size: x-large;
-    text-decoration: underline;
 }
 .rank {
     padding: 6px;
     padding-left: 12px;
     padding-right: 12px;
-    font-weight: bolder;
     font-size:larger;
     border-radius: 50%;
     width: 27px;
@@ -70,7 +64,6 @@ body {
     text-align: center;
 }
 .hall {
-    font-weight: bolder;
     font-size:larger;
 }
 .score {
@@ -82,38 +75,21 @@ body {
     background: linear-gradient(to right, maroon 0%, maroon 85%, lightgray 85%, lightgray 100%);
     font-size: larger;
     color: burlywood;
-    font-weight: bolder;
     border: 1px solid black;
     line-height: 24px;
 }
 .rank, .hall {display: inline;}
-.reviewinfo {
-    border: 3px solid black;
-    padding: 30px;
-    padding-top: 0px;
-}
-.rateandreview {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 12px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
 .cats {
     font-size:medium;
-    font-weight: bolder;
-    text-decoration: underline;
-    font-style: italic;
 }
 .scorerate {
     padding-left: 6px;
     color: burlywood;
     border: 1px solid black;
-    font-size:medium;
-    font-weight: bolder;
-    height: 18px;
+    font-size:small;
+    height: 20px;
     width: 500px;
-    line-height: 18px;
+    line-height: 20px;
 }
 #convscore {
     background: linear-gradient(to right, maroon 0%, maroon 70%, lightgray 70%, lightgray 100%);
@@ -130,47 +106,39 @@ body {
 #cleanscore {
     background: linear-gradient(to right, maroon 0%, maroon 90%, lightgray 90%, lightgray 100%);
 }
-.revs2 {
+.revs {
     font-size:medium;
-    font-weight: bolder;
-}
-.reviewcontent {
-    border: 1px solid black;
-    padding-left: 10px;
-    padding-bottom: 10px;
 }
 .revtext {
     font-size: medium;
+    padding-left: 10px;
 }
 .vote {
     font-size:small;
+    padding-left: 10px;
 }
 .likedis {
     float: right;
     padding-right: 12px;
 }
 .resize {
-    width:18px;
+    width:36px;
     height: auto;
     padding-left: 20px;
 }
 .likedislike {
-    font-size:medium;
+    font-size:small;
 }
 .tags {
     font-size: medium;
-    font-weight: bold;
-    text-decoration: underline;
 }
 .tagtext {
     padding: 6px;
     border: 1px solid black;
     font-size: medium;
-    font-weight: bold;
 }
 .based {
     font-size: smaller;
-    font-weight: lighter;
     float: right;
     padding-right: 12px;
 }
