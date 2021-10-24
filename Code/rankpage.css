@@ -54,7 +54,7 @@ nav img{
 }
 
 body {
-    background-color: gainsboro;
+    background-image: linear-gradient(rgb(238, 225, 207), rgb(255, 209, 149));
 }
 
 .top {
