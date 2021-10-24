@@ -62,4 +62,4 @@ Qinyun Cao: Did wireframes for the home page and part of the review page. Finish
 
 Moiz Saqib: Did wireframes for the review page and the write a review page. Coded those pages as well. Debugged all pages through the validator and provided common background gradient to the ranking page.
 
-Yingxun Wei:
+Yingxun Wei: Did wireframes for the ranking page and the arrow link - specific factors rating page. Coded css and html for the ranking page, signIn page and signUp page.
