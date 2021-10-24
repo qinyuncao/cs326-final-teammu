@@ -21,11 +21,13 @@ This is the wireframe for our home page. It has a simple design, with the abilit
 This is the screenshot of the home page:
 ![Screenshot of Home Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/homepage.png?raw=true)
 
+
 This is the wireframe for the overall rank for all residential halls. If the user wants to see the specific rate score of each residential hall, just clicking the right arrow, and then it would link to the specific score for each factor as well as the reviews.
 ![Wireframe of Ranking](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/rankframe.png?raw=true)
 
 This is the screenshot of the ranking page:
 ![Screenshot of Ranking Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/rankingpage.png?raw=true)
+
 
 This is the wireframe for the rate score of a residential hall/review page after clicking the right arrow of each hall. We are using Crabtree Hall, just an an example. There are other people's review and the total score. The user can also change the residence hall from this page as well. If the user is logged in, they can like and dislike a review as well as edit/delete their own review.
 ![Wireframe of Rating/Review Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/reviewframe.png?raw=true)
@@ -33,11 +35,13 @@ This is the wireframe for the rate score of a residential hall/review page after
 This is the screenshot of the rating/review page:
 ![Screenshot of Rating/Review Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/reviewpage.png?raw=true)
 
+
 This is the wireframe for the 'write a review' page. Here, a user selects which hall they are reviewing. Then, they rate the hall on five factors on a scale of 1-20. The user also types a more detailed, long-form review. Additionally, the user provides at least one tag which will benefit the search function at the top of site.
 ![Wireframe of Write A Review Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/writereviewframe.png?raw=true)
 
 This is the screenshot of the write a review page:
 ![Screenshot of Write A Review Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/writeareviewpage.png?raw=true)
+
 
 This is the wireframe for the Log In page. Here, the user would enter their username and password to log in to the site. This would allow the user the ability to write reviews as well as interact with a review by liking or disliking.
 ![Wireframe of Log In Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/loginframe.png?raw=true)
@@ -45,11 +49,13 @@ This is the wireframe for the Log In page. Here, the user would enter their user
 This is the screenshot of the Log In page:
 ![Screenshot of Log In Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/loginpage.png?raw=true)
 
+
 This is the wireframe for the Sign Up page. Here, the user would enter their UMASS email address, a username, password, and the password re-entered to create an account for the site.
 ![Wireframe of Sign Up Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/signupframe.png?raw=true)
 
 This is the screenshot of the Sign Up page:
 ![Screenshot of Sign Up Page](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/signuppage.png?raw=true)
+
 
 ### **Breakdown of the Division of Labor**:
 Qinyun Cao: Did wireframes for the home page and part of the review page. Finished header for all the pages. Fixed some bugs for other pages. Come up with the project idea, the wireframes, and the design with teammates.
