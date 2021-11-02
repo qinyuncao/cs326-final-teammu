@@ -40,7 +40,7 @@ nav img{
     margin: 10px;
     color: black;
     text-decoration: blanchedalmond;
-    font-size: 30px;
+    font-size: 16px;
 }
 .nav-links ul li::after{
     content: '';
