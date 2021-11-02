@@ -34,7 +34,7 @@ nav img{
     margin: 10px;
     color: black;
     text-decoration: blanchedalmond;
-    font-size: 30px;
+    font-size: 16px;
 }
 .nav-links ul li::after{
     content: '';
@@ -57,6 +57,7 @@ body {
 .selectsec {
     padding: 30px;
     padding-top: 18px;
+    padding-bottom: 45px;
 }
 .selecthalls {
     font-weight: bold;
