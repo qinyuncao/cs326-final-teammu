@@ -12,8 +12,16 @@ document.getElementById('submit').addEventListener('click',() => {
     if (halltextrev && tagtext) {
         //Must insert code to get username of person reviewing and push it to server with post request
         const reviewObject = {username: 'whatever', hall: halls, convenience: gradeconv, comfort: gradecomf, privacy: gradepriv, facility: gradefac, cleanliness: gradeclean, totalscore: gradeconv+gradecomf+gradepriv+gradefac+gradeclean, detailedRev: halltextrev, tagRev: tagtext};
-        console.log(reviewObject);
         document.getElementById('confirm').innerText = 'Thank you for  submitting a review!';
+        document.getElementById('gradeconv').setAttribute('disabled','disabled');
+        document.getElementById('gradecomf').setAttribute('disabled','disabled');
+        document.getElementById('gradepriv').setAttribute('disabled','disabled');
+        document.getElementById('gradefac').setAttribute('disabled','disabled');
+        document.getElementById('gradeclean').setAttribute('disabled','disabled');
+        document.getElementById('halltextrev').setAttribute('disabled','disabled');
+        document.getElementById('tagtext').setAttribute('disabled','disabled');
+        document.getElementById('submit').setAttribute('disabled','disabled');
+        document.getElementById('halls').setAttribute('disabled','disabled');
     }
     else {
         document.getElementById('confirm').innerText = 'Please complete all fields to submit.';
