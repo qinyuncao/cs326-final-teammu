@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8" />
         <title>Review Page</title>
+        <script src="review.js" defer></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="reviewcss.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
     <body class="container">
         <section class ="header">
             <nav>
-                <a href="mainPage.html"><img src="imageForWeb/logo.jpg" alt="logo for the site" width="300"></a>
+                <a href="mainPage.html"><img src="imageForWeb/logo.jpeg" alt="logo for the site" width="300"></a>
                 <div class = "nav-links">
                     <ul>
                         <li><a href="writereview.html">Write a<br>Review</a></li>
@@ -28,11 +29,11 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <p class="rank">4</p>
-                    <p class="hall">Crabtree Hall - Northeast</p>
+                    <p class="rank" id='relRank'>N/A</p>
+                    <p class="hall" id='chosenHall'>UMass Hall</p>
                 </div>
                 <div class="col">
-                    <div class="score">Overall Score : 85%</div>
+                    <div id="overallScore" class="score">Overall Score : 0%</div>
                 </div>
             </div>
         </div>
@@ -43,92 +44,34 @@
                 <div class="row">
                     <div class="col">
                         <div class="rates">
-                            <p class="cats">Convenience: 14/20</p>
-                            <div class="scorerate" id="convscore">14/20</div>
+                            <p class="cats" id="convlabel">Convenience: 0/20</p>
+                            <div class="scorerate" id="convscore">0/20</div>
                             <br>
-                            <p class="cats">Comfort: 16/20</p>
-                            <div class="scorerate" id="comfscore">16/20</div>
+                            <p class="cats" id="comflabel">Comfort: 0/20</p>
+                            <div class="scorerate" id="comfscore">0/20</div>
                             <br>
-                            <p class="cats">Privacy: 20/20</p>
-                            <div class="scorerate" id="privscore">20/20</div>
+                            <p class="cats" id="privlabel">Privacy: 0/20</p>
+                            <div class="scorerate" id="privscore">0/20</div>
                             <br>
-                            <p class="cats">Facility: 17/20</p>
-                            <div class="scorerate" id="facscore">17/20</div>
+                            <p class="cats" id="faclabel">Facility: 0/20</p>
+                            <div class="scorerate" id="facscore">0/20</div>
                             <br>
-                            <p class="cats">Cleanliness: 18/20</p>
-                            <div class="scorerate" id="cleanscore">18/20</div>
+                            <p class="cats" id="cleanlabel">Cleanliness: 0/20</p>
+                            <div class="scorerate" id="cleanscore">0/20</div>
                             <br><br>
-                            <p class="tags">Residential Hall Top Tags:</p>
-                            <div>
-                                <span class="tagtext">quiet</span>
-                                <span class="tagtext">location</span>
-                                <span class="tagtext">private</span>
-                            </div>
+                            <p class="tags">Residential Hall Random Tags:</p>
+                            <div id="tagbody"></div>
                         </div>
                     </div>
                     <div class="col">
-                        <div>
+                        <div id="revcol">
                             <p class="revs">Reviews:</p>
-                            <div class="border border-dark">
-                                <p class="revtext">CH is xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                                <span class="vote">Vote: 88/100</span>
-                                <span class="likedis">
-                                    <img class="resize" src="imageForWeb/like.png" alt="like button">
-                                    <span class="likedislike">20</span>
-                                    <img class="resize" src="imageForWeb/dislike.png" alt="dislike button">
-                                    <span class="likedislike">4</span>
-                                </span>
-                            </div>
-                            <br>
-                            <div class="border border-dark">
-                                <p class="revtext">CH is xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                                <span class="vote">Vote: 58/100</span>
-                                <span class="likedis">
-                                    <img class="resize" src="imageForWeb/like.png" alt="like button">
-                                    <span class="likedislike">15</span>
-                                    <img class="resize" src="imageForWeb/dislike.png" alt="dislike button">
-                                    <span class="likedislike">3</span>
-                                </span>
-                            </div>
-                            <br>
-                            <div class="border border-dark">
-                                <p class="revtext">CH is xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                                <span class="vote">Vote: 77/100</span>
-                                <span class="likedis">
-                                    <img class="resize" src="imageForWeb/like.png" alt="like button">
-                                    <span class="likedislike">8</span>
-                                    <img class="resize" src="imageForWeb/dislike.png" alt="dislike button">
-                                    <span class="likedislike">3</span>
-                                </span>
-                            </div>
-                            <br>
-                            <div class="border border-dark">
-                                <p class="revtext">CH is xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                                <span class="vote">Vote: 63/100</span>
-                                <span class="likedis">
-                                    <img class="resize" src="imageForWeb/like.png" alt="like button">
-                                    <span class="likedislike">22</span>
-                                    <img class="resize" src="imageForWeb/dislike.png" alt="dislike button">
-                                    <span class="likedislike">17</span>
-                                </span>
-                            </div>
-                            <br>
-                            <div class="border border-dark">
-                                <p class="revtext">CH is xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                                <span class="vote">Vote: 34/100</span>
-                                <span class="likedis">
-                                    <img class="resize" src="imageForWeb/like.png" alt="like button">
-                                    <span class="likedislike">9</span>
-                                    <img class="resize" src="imageForWeb/dislike.png" alt="dislike button">
-                                    <span class="likedislike">30</span>
-                                </span>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
-            <p class="based">(Based on 13 Ratings)</p>
+            <p id="totalrevs" class="based">(Based on 0 Ratings)</p>
         </div>
         <br><br><br><br>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
