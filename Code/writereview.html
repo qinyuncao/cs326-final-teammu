@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8" />
         <title>Write A Review</title>
+        <script src="writereview.js" defer></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="writereviewcss.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +14,7 @@
     <body>
         <section class ="header">
             <nav>
-                <a href="mainPage.html"><img src="imageForWeb/logo.jpg" alt="logo for the site" width="300"></a>
+                <a href="mainPage.html"><img src="imageForWeb/logo.jpeg" alt="logo for the site" width="300"></a>
                 <div class = "nav-links">
                     <ul>
                         <li><a href="writereview.html">Write a<br>Review</a></li>
@@ -26,7 +27,7 @@
         </section>
         <h4>Write A Review</h4>
         <div class="border border-dark">
-            <div class="selectsec">
+            <div id="revSections" class="selectsec">
                 <div class="container">
                     <div class="row">
                         <div class="col-3">
@@ -94,25 +95,25 @@
                                 <input type="range" class="form-range" value="1" id="gradeconv" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
                                 <output>1</output>
                             </div>
-                            <br>
+                            
                             <div class="shift">
                                 <label for="gradecomf" class="form-label">Comfort:</label>
                                 <input type="range" class="form-range" value="1" id="gradecomf" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
                                 <output>1</output>
                             </div>
-                            <br>
+                            
                             <div class="shift">
                                 <label for="gradepriv" class="form-label">Privacy:</label>
                                 <input type="range" class="form-range" value="1" id="gradepriv" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
                                 <output>1</output>
                             </div>
-                            <br>
+                            
                             <div class="shift">
                                 <label for="gradefac" class="form-label">Facility:</label>
                                 <input type="range" class="form-range" value="1" id="gradefac" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
                                 <output>1</output>
                             </div>
-                            <br>
+                            
                             <div class="shift">
                                 <label for="gradeclean" class="form-label">Cleanliness:</label>
                                 <input type="range" class="form-range" value="1" id="gradeclean" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
@@ -124,7 +125,7 @@
                         <div>
                             <label for="halltextrev">Enter a more detailed review:</label>
                             <br>
-                            <textarea id="halltextrev" class="form-control" rows="13"></textarea>
+                            <textarea id="halltextrev" class="form-control" rows="11"></textarea>
                         </div>
                     </div>
                 </div>
@@ -137,8 +138,9 @@
                 <input type="button" value="Submit!" id="submit" class="btn btn-primary">
             </div>
             <br>
+            <div class="centertext" id="confirm"></div>
         </div>
-        <br>
+        <br><br><br>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 </html>

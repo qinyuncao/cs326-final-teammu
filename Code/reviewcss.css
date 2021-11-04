@@ -36,7 +36,7 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background: white;
+    background: rgb(226, 55, 55);
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -50,6 +50,7 @@ body {
     background-image: linear-gradient(rgb(238, 225, 207), rgb(255, 209, 149));
     padding-left: 75px;
     padding-right: 75px;
+    padding-bottom: 6px;
 }
 .rank {
     padding: 6px;
@@ -72,7 +73,7 @@ body {
     float: right;
     height: 24px;
     width: 600px;
-    background: linear-gradient(to right, maroon 0%, maroon 85%, lightgray 85%, lightgray 100%);
+    background: linear-gradient(to right, maroon 0%, maroon 0%, lightgray 0%, lightgray 100%);
     font-size: larger;
     color: burlywood;
     border: 1px solid black;
@@ -92,19 +93,19 @@ body {
     line-height: 20px;
 }
 #convscore {
-    background: linear-gradient(to right, maroon 0%, maroon 70%, lightgray 70%, lightgray 100%);
+    background: linear-gradient(to right, maroon 0%, maroon 0%, lightgray 0%, lightgray 100%);
 }
 #comfscore {
-    background: linear-gradient(to right, maroon 0%, maroon 80%, lightgray 80%, lightgray 100%);
+    background: linear-gradient(to right, maroon 0%, maroon 0%, lightgray 0%, lightgray 100%);
 }
 #privscore {
-    background: linear-gradient(to right, maroon 0%, maroon 100%, lightgray 100%, lightgray 100%);
+    background: linear-gradient(to right, maroon 0%, maroon 0%, lightgray 0%, lightgray 100%);
 }
 #facscore {
-    background: linear-gradient(to right, maroon 0%, maroon 85%, lightgray 85%, lightgray 100%);
+    background: linear-gradient(to right, maroon 0%, maroon 0%, lightgray 0%, lightgray 100%);
 }   
 #cleanscore {
-    background: linear-gradient(to right, maroon 0%, maroon 90%, lightgray 90%, lightgray 100%);
+    background: linear-gradient(to right, maroon 0%, maroon 0%, lightgray 0%, lightgray 100%);
 }
 .revs {
     font-size:medium;
@@ -126,8 +127,12 @@ body {
     height: auto;
     padding-left: 20px;
 }
+.resize:hover {
+    width: 39px;
+}
 .likedislike {
-    font-size:small;
+    font-size:medium;
+    padding-left: 3px;
 }
 .tags {
     font-size: medium;

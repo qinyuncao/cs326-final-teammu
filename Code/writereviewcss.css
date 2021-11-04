@@ -40,7 +40,7 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background: rgb(226, 55, 55);
+    background: white;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -73,7 +73,12 @@ body {
 }
 .shift {
     padding-left: 30px;
+    padding-bottom: 10px;
 }
 input[type="range"] {
     width: 369px;
+}
+.centertext {
+    text-align: center;
+    font-size: 21px;
 }

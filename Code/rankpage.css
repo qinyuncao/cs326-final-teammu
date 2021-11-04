@@ -55,6 +55,7 @@ nav img{
 
 body {
     background-image: linear-gradient(rgb(238, 225, 207), rgb(255, 209, 149));
+    padding-bottom: 500px;
 }
 
 .top {
@@ -79,6 +80,7 @@ body {
 .hallname1 {
     border-radius: 5px;
     background: #FFCC66;
+    color: black;
     text-align: center; 
     display: inline-block;
     font-size:x-large;
@@ -87,6 +89,10 @@ body {
     width: 420px;
     height: 35px;
     margin-left: 30px;
+}
+.hallname1:hover {
+    background: maroon;
+    color: white;
 }
 .rank2 {
     height: 28px;
@@ -104,6 +110,7 @@ body {
 .hallname2 {
     border-radius: 5px;
     background: #FFCC66;
+    color: black;
     text-align: center; 
     display: inline-block;
     font-size:large;
@@ -114,7 +121,10 @@ body {
     margin-left: 55px;
     margin-right: 35px
 }
-
+.hallname2:hover {
+    background: maroon;
+    color: white;
+}
 progress {
     border-radius: 2px;
     width: 530px;
@@ -154,4 +164,7 @@ progress::-webkit-progress-value {
     width: 30px;
     border: 5px solid #404044;
     margin-left: 18px;
+}
+.spacer {
+    padding-bottom: 20px;
 }
