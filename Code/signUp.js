@@ -26,9 +26,7 @@ document.getElementById('signupbutton').addEventListener('click',async function(
     }
 
     //check if inputted username is in the database, if so alert the user. If not, add it to the data and log the user in
-    const result = await fetch(`http://localhost:8080`+'/api/users/'+inputUsername);
-    console.log(result);
-    if(result) {
+    if(true) {
         const userInfo = {email: inputEmail, username: inputUsername, password: inputPassword};
         //post object to server
         const result2 = await fetch(`http://localhost:8080`+'/api/users',{
@@ -42,8 +40,6 @@ document.getElementById('signupbutton').addEventListener('click',async function(
                 inputPassword
             }
         })
-        //log user in
-        window.location.href = 'mainPage.html';
     }
     else {
         document.getElementById('userUpdate').innerText = 'Sorry! That user already exists.';

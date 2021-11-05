@@ -7,9 +7,14 @@ const port = process.env.port || 8080;
 
 
 app.use(express.json());
-app.use(express.static(__dirname + '/public/'));
 const filename1 = 'username.json';
 let users = [];
+
+//
+app.get('/',function(req,res){
+    console.log('hello');
+    res.redirect('mainPage.html');
+});
 
 //When client only ask for users, return the users array to the respond
 app.get('/api/users', function(req, res){
@@ -59,11 +64,13 @@ function reload() {
 }
 
 app.get('/login',function(req,res){
-    res.sendFile('logIn.html',{'root':'../'});
+    res.redirect('logIn.html');
+    //res.sendFile('logIn.css',{'root':'../'});
+    //res.sendFile('logIn.js',{'root':'../'});
 });
 
 app.get('/signup',function(req,res){
-    res.sendFile('signUp.html',{'root':'../'});
+    res.sendFile('signUp.html');
 });
 
 
