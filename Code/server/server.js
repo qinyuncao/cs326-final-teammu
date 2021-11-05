@@ -2,13 +2,12 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 
-
 //port 
-const port = process.env.port || 3000;
+const port = process.env.port || 8080;
 
 
 app.use(express.json());
-
+app.use(express.static(__dirname + '/public/'));
 const filename1 = 'username.json';
 let users = [];
 
@@ -26,9 +25,9 @@ app.get('/api/users/:username',function(req,res){
     //reload first
     reload();
     //Check if the database has this username, if not, return 404
-    const user = users.find(c => c.username === req.params.username);
-    if(!user) return res.status(404).send('The username is not exist');
-    res.send(user);
+    const user = users.find(c => c.username === req.params.inputUsername);
+    if(!user) return res.send(false);
+    res.send(true);
 });
 
 //When client want to create new username and password
@@ -37,15 +36,10 @@ app.post('/api/users', function(req,res){
     //reload the user first
     reload();
 
-    if(!req.body.username||!req.body.password ||req.body.username.length<5){
-        res.status(400).send('Username and Password is required with minimum 5 charactor')
-        return;
-    }
-
     const user = {
-        id: users.length+1,
-        username : req.body.username,
-        password : req.body.password
+        email: req.body.inputEmail,
+        username : req.body.inputUsername,
+        password : req.body.inputPassword
     };
     users.push(user);
     let strIn = JSON.stringify(users);
@@ -64,7 +58,13 @@ function reload() {
     }
 }
 
+app.get('/login',function(req,res){
+    res.sendFile('logIn.html',{'root':'../'});
+});
 
+app.get('/signup',function(req,res){
+    res.sendFile('signUp.html',{'root':'../'});
+});
 
 
 app.listen(port,() => {

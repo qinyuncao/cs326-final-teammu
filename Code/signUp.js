@@ -1,8 +1,11 @@
-document.getElementById('signupbutton').addEventListener('click',() => {
+const { response } = require("express");
+
+document.getElementById('signupbutton').addEventListener('click',async function(){
     const inputEmail = document.getElementById('inputEmail').value;
     const inputUsername = document.getElementById('inputUsername').value;
     const inputPassword = document.getElementById('inputPassword').value;
     const reInputPassword = document.getElementById('reInputPassword').value;
+    const port = process.env.port || 3000;
     if (!/\S+@\S+\.\S+/.test(inputEmail)) {
         document.getElementById('userUpdate').innerText = 'Sorry! The inputted email is invalid.';
         return;
@@ -24,10 +27,22 @@ document.getElementById('signupbutton').addEventListener('click',() => {
     }
 
     //check if inputted username is in the database, if so alert the user. If not, add it to the data and log the user in
-    
-    if(true) {
+    const result = await fetch(`http://localhost:${port}`+'/api/users/'+inputUsername);
+    console.log(result);
+    if(result) {
         const userInfo = {email: inputEmail, username: inputUsername, password: inputPassword};
         //post object to server
+        const result2 = await fetch(`http://localhost:${port}`+'/api/users',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body: {
+                inputEmail,
+                inputUsername,
+                inputPassword
+            }
+        })
         //log user in
         window.location.href = 'mainPage.html';
     }
