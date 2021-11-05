@@ -29,17 +29,6 @@ document.getElementById('signupbutton').addEventListener('click',async function(
     if(true) {
         const userInfo = {email: inputEmail, username: inputUsername, password: inputPassword};
         //post object to server
-        const result2 = await fetch(`http://localhost:8080`+'/api/users',{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body: {
-                inputEmail,
-                inputUsername,
-                inputPassword
-            }
-        })
     }
     else {
         document.getElementById('userUpdate').innerText = 'Sorry! That user already exists.';
