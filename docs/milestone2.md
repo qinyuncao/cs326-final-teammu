@@ -38,5 +38,11 @@ In this image, a user is making a review. This review information is posted to t
 ![Review Being Made](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/writeareview.png?raw=true)
 
 ### **Heroku Application**:
+https://cs326-teammu.herokuapp.com/
 
 ### **Breakdown of Labor**:
+Moiz Saqib: Helped lay out server API setup and established JavaScript frontend code to populate HTML pages with data from server.
+
+Qinyun Cao:
+
+Yingxun Wei:
