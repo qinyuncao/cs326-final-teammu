@@ -11,7 +11,7 @@ document.getElementById('loginbutton').addEventListener('click',async() => {
     if (response.ok) {
        
        document.getElementById('userUpdate').innerText = 'Correct username and password';
-       window.location.href = 'mainPage.html';
+       window.location.href = 'mainPage2.html';
     }
     else {
         document.getElementById('userUpdate').innerText = 'Sorry! Inputted username/password is not correct';
