@@ -20,4 +20,5 @@ HallAdvisor
 6. Connect the frontend and backend Javascript to populate the page with the necessary data which is received from the server. Also to post the necessary data from user input.
 
 Still to be done:
+
 7. Set up the database to store the data in an ideal way.
