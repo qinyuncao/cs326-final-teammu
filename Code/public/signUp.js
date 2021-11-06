@@ -46,6 +46,8 @@ document.getElementById('signupbutton').addEventListener('click', async function
               body: JSON.stringify(inputData)
         });
 
+        window.location.href = "logIn.html";
+
     }
     else {
         document.getElementById('userUpdate').innerText = 'Sorry! That user already exists.';
