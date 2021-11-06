@@ -26,5 +26,14 @@ The fifth endpoint will be used to get the detailed review data of a selected re
 
 ### **Client Interface**:
 
+![Log In Being Made](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/login.png?raw=true)
+
+![Sign Up Being Made](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/signup.png?raw=true)
+
+![Sign Up Failing](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/signup_failed.png?raw=true)
+
+![Review Being Made](https://github.com/qinyuncao/cs326-final-teammu/blob/main/images/writeareview.png?raw=true)
 
 ### **Heroku Application**:
+
+### **Breakdown of Labor**:
