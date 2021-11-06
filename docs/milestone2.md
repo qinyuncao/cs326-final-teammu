@@ -43,6 +43,6 @@ https://cs326-teammu.herokuapp.com/
 ### **Breakdown of Labor**:
 Moiz Saqib: Helped lay out server API setup and established JavaScript frontend code to populate HTML pages with data from server.
 
-Qinyun Cao:
+Qinyun Cao: Build the local server and save data to a json file, so we can at least get the information locally. Connect the html page with the server(add some code the js file of html page).
 
 Yingxun Wei:
