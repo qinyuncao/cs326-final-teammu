@@ -10,7 +10,7 @@ document.getElementById('loginbutton').addEventListener('click',async() => {
     //If login succesful, go to main page with user logged in
     if (response.ok) {
        
-       document.getElementById('userUpdate').innerText = '';
+       document.getElementById('userUpdate').innerText = 'Correct username and password';
        window.location.href = 'mainPage.html';
     }
     else {

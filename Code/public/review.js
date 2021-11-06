@@ -17,9 +17,9 @@ function renderHall() {
     document.getElementById('chosenHall').innerText = 'Brown Hall';
 }
 
-function renderReviews() {
+async function renderReviews() {
     //Iterate through the number of individual reviews and render the review on the page
-    for (let i=0; i<3; i++) {
+    for (let i=0; i<1; i++) {
         const revcol = document.getElementById('revcol');
         const revcon = document.createElement('div');
         revcon.classList.add('border');

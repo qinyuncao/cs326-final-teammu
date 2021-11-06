@@ -6,9 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "heroku"
+  ],
   "author": "Qinyun Cao",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }

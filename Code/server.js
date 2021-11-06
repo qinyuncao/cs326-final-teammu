@@ -100,6 +100,16 @@ app.post('/review',async function(req,res){
     res.send(reviews);
 });
 
+//use this when get the reviews
+app.get('/review',async function(req,res){
+    //reload first
+    reload();
+    //Send back the data
+});
+
+
+
+
 //reload the database
 function reload() {
     if (fs.existsSync(filename1)) {
