@@ -1,10 +1,16 @@
 
 
-document.getElementById('signupbutton').addEventListener('click',async function(){
+document.getElementById('signupbutton').addEventListener('click', async function(){
     const inputEmail = document.getElementById('inputEmail').value;
     const inputUsername = document.getElementById('inputUsername').value;
     const inputPassword = document.getElementById('inputPassword').value;
     const reInputPassword = document.getElementById('reInputPassword').value;
+    const localhost = 'http://localhost:8080/users';
+    const inputData = {
+        email:inputEmail,
+        username:inputUsername,
+        password:inputPassword
+    };
     if (!/\S+@\S+\.\S+/.test(inputEmail)) {
         document.getElementById('userUpdate').innerText = 'Sorry! The inputted email is invalid.';
         return;
@@ -25,10 +31,21 @@ document.getElementById('signupbutton').addEventListener('click',async function(
         return;
     }
 
+
     //check if inputted username is in the database, if so alert the user. If not, add it to the data and log the user in
-    if(true) {
-        const userInfo = {email: inputEmail, username: inputUsername, password: inputPassword};
+    const response = await fetch(localhost+'/'+inputUsername);
+    console.log(response);
+    if(response.ok) {
+        document.getElementById('userUpdate').innerText = 'The information has been stored!';
         //post object to server
+        await fetch(localhost,{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(inputData)
+        });
+
     }
     else {
         document.getElementById('userUpdate').innerText = 'Sorry! That user already exists.';
