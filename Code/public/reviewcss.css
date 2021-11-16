@@ -36,7 +36,7 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background: rgb(226, 55, 55);
+    background: black;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -50,7 +50,7 @@ body {
     background-image: linear-gradient(rgb(238, 225, 207), rgb(255, 209, 149));
     padding-left: 75px;
     padding-right: 75px;
-    padding-bottom: 6px;
+    padding-bottom: 30px;
 }
 .rank {
     padding: 6px;

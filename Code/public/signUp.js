@@ -5,7 +5,6 @@ document.getElementById('signupbutton').addEventListener('click', async function
     const inputUsername = document.getElementById('inputUsername').value;
     const inputPassword = document.getElementById('inputPassword').value;
     const reInputPassword = document.getElementById('reInputPassword').value;
-    const localhost = 'http://localhost:8080/users';
     const inputData = {
         email:inputEmail,
         username:inputUsername,
@@ -33,12 +32,11 @@ document.getElementById('signupbutton').addEventListener('click', async function
 
 
     //check if inputted username is in the database, if so alert the user. If not, add it to the data and log the user in
-    const response = await fetch(localhost+'/'+inputUsername);
-    console.log(response);
+    const response = await fetch('/users/'+inputUsername);
     if(response.ok) {
         document.getElementById('userUpdate').innerText = 'The information has been stored!';
         //post object to server
-        await fetch(localhost,{
+        await fetch('/users',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,7 +45,6 @@ document.getElementById('signupbutton').addEventListener('click', async function
         });
 
         window.location.href = "logIn.html";
-
     }
     else {
         document.getElementById('userUpdate').innerText = 'Sorry! That user already exists.';

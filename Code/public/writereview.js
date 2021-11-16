@@ -1,4 +1,9 @@
 document.getElementById('submit').addEventListener('click',async() => {
+    const curuserid = await (await fetch('/currentuser')).json()
+    if (!curuserid) {
+        document.getElementById('confirm').innerText = 'You must be logged in to submit a review.';
+        return;
+    }
     let hallList = document.getElementById('halls');
     const halls = hallList.options[hallList.selectedIndex].text;
     const gradeconv = parseInt(document.getElementById('gradeconv').value);
@@ -16,11 +21,15 @@ document.getElementById('submit').addEventListener('click',async() => {
         facility:gradefac,
         cleanliness:gradeclean,
         hallreview:halltextrev,
-        tags:tagtext
+        tags:tagtext,
+        totalscore: gradeconv + gradecomf + gradepriv + gradefac + gradeclean,
+        likecount: 0,
+        dislikecount: 0,
+        reviewuserid: curuserid
     };
     if (halltextrev && tagtext) {
         //save it to database
-        await fetch('http://localhost:8080/review',{
+        await fetch('/review',{
             method: 'POST', 
             headers: {
               'Content-Type': 'application/json'

@@ -43,7 +43,7 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background: rgb(226, 55, 55);
+    background: black;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -55,14 +55,14 @@ nav img{
 
 body {
     background-image: linear-gradient(rgb(238, 225, 207), rgb(255, 209, 149));
-    padding-bottom: 500px;
+    padding-bottom: 600px;
 }
 
 .top {
     font-weight: bolder;
     font-size: xx-large;
     font-family: 'Andada Pro', serif;
-    
+    margin-left: 85px;
 }
 .rank1 {
     height: 35px;
@@ -167,4 +167,7 @@ progress::-webkit-progress-value {
 }
 .spacer {
     padding-bottom: 20px;
+}
+.overallscore {
+    margin-left: 1168px;
 }
