@@ -10,8 +10,8 @@ document.getElementById('signupbutton').addEventListener('click', async function
         username:inputUsername,
         password:inputPassword
     };
-    if (!/\S+@\S+\.\S+/.test(inputEmail)) {
-        document.getElementById('userUpdate').innerText = 'Sorry! The inputted email is invalid.';
+    if (!/\S+@\S+\.\S+/.test(inputEmail) || !/@umass\.edu$/.test(inputEmail)) {
+        document.getElementById('userUpdate').innerText = 'Sorry! You must input a valid UMass Email.';
         return;
     }
 
