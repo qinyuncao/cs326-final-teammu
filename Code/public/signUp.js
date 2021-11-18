@@ -1,5 +1,3 @@
-
-
 document.getElementById('signupbutton').addEventListener('click', async function(){
     const inputEmail = document.getElementById('inputEmail').value;
     const inputUsername = document.getElementById('inputUsername').value;
@@ -43,7 +41,6 @@ document.getElementById('signupbutton').addEventListener('click', async function
               },
               body: JSON.stringify(inputData)
         });
-
         window.location.href = "logIn.html";
     }
     else {

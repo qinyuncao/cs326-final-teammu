@@ -1,3 +1,13 @@
+window.addEventListener('load',async() => {
+    const curuserid = await (await fetch('/currentuser')).json();
+    if (curuserid) {
+        document.getElementById('homeButton').setAttribute('href','mainPage2.html');
+    }
+    else {
+        document.getElementById('homeButton').setAttribute('href','mainPage.html');
+    }
+});
+
 document.getElementById('loginbutton').addEventListener('click',async() => {
     const inputUsername = document.getElementById('inputUsername').value;
     const inputPassword = document.getElementById('inputPassword').value;

@@ -1,11 +1,38 @@
+window.addEventListener('load',async() => {
+    const curuserid = await (await fetch('/currentuser')).json();
+    if (curuserid) {
+        document.getElementById('homeButton').setAttribute('href','mainPage2.html');
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.setAttribute('href','mainPage.html');
+        link.innerText = 'Log Out';
+        listItem.appendChild(link);
+        document.getElementById('headerNav').appendChild(listItem);
+    }
+    else {
+        document.getElementById('homeButton').setAttribute('href','mainPage.html');
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.setAttribute('href','logIn.html');
+        link.innerText = 'Log In';
+        listItem.appendChild(link);
+        document.getElementById('headerNav').appendChild(listItem);
+        const listItem2 = document.createElement('li');
+        const link2 = document.createElement('a');
+        link2.setAttribute('href','signUp.html');
+        link2.innerText = 'Sign Up';
+        listItem2.appendChild(link2);
+        document.getElementById('headerNav').appendChild(listItem2);
+    }
+});
+
 document.getElementById('submit').addEventListener('click',async() => {
-    const curuserid = await (await fetch('/currentuser')).json()
+    const curuserid = await (await fetch('/currentuser')).json();
     if (!curuserid) {
         document.getElementById('confirm').innerText = 'You must be logged in to submit a review.';
         return;
     }
-    let hallList = document.getElementById('halls');
-    const halls = hallList.options[hallList.selectedIndex].text;
+    const halls = document.getElementById('halls').options[document.getElementById('halls').selectedIndex].text;
     const gradeconv = parseInt(document.getElementById('gradeconv').value);
     const gradecomf = parseInt(document.getElementById('gradecomf').value);
     const gradepriv = parseInt(document.getElementById('gradepriv').value);
@@ -35,12 +62,9 @@ document.getElementById('submit').addEventListener('click',async() => {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify(review)
-        }
-        );
-        
+        });
 
         //Must insert code to get username of person reviewing and push it to server with post request
-        const reviewObject = {username: 'whatever', hall: halls, convenience: gradeconv, comfort: gradecomf, privacy: gradepriv, facility: gradefac, cleanliness: gradeclean, totalscore: gradeconv+gradecomf+gradepriv+gradefac+gradeclean, detailedRev: halltextrev, tagRev: tagtext};
         document.getElementById('confirm').innerText = 'Thank you for  submitting a review!';
         document.getElementById('gradeconv').setAttribute('disabled','disabled');
         document.getElementById('gradecomf').setAttribute('disabled','disabled');

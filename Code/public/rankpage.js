@@ -2,6 +2,31 @@
 //Then this array is itterated through and the halls are dynamically added to the pages
 //i < length of array
 window.addEventListener('load',async() => {
+    const curUser = await (await fetch('/currentuser')).json();
+    if (curUser) {
+        document.getElementById('homeButton').setAttribute('href','mainPage2.html');
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.setAttribute('href','mainPage.html');
+        link.innerText = 'Log Out';
+        listItem.appendChild(link);
+        document.getElementById('headerNav').appendChild(listItem);
+    }
+    else {
+        document.getElementById('homeButton').setAttribute('href','mainPage.html');
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.setAttribute('href','logIn.html');
+        link.innerText = 'Log In';
+        listItem.appendChild(link);
+        document.getElementById('headerNav').appendChild(listItem);
+        const listItem2 = document.createElement('li');
+        const link2 = document.createElement('a');
+        link2.setAttribute('href','signUp.html');
+        link2.innerText = 'Sign Up';
+        listItem2.appendChild(link2);
+        document.getElementById('headerNav').appendChild(listItem2);
+    }
     const response = await(await fetch('/reviewrank')).json();
     for (let i=0; i < response.length; i++) {
         if (i===0) {

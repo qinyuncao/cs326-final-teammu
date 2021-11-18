@@ -1,5 +1,29 @@
 window.addEventListener('load',async() => {
     const curUser = await (await fetch('/currentuser')).json();
+    if (curUser) {
+        document.getElementById('homeButton').setAttribute('href','mainPage2.html');
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.setAttribute('href','mainPage.html');
+        link.innerText = 'Log Out';
+        listItem.appendChild(link);
+        document.getElementById('headerNav').appendChild(listItem);
+    }
+    else {
+        document.getElementById('homeButton').setAttribute('href','mainPage.html');
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.setAttribute('href','logIn.html');
+        link.innerText = 'Log In';
+        listItem.appendChild(link);
+        document.getElementById('headerNav').appendChild(listItem);
+        const listItem2 = document.createElement('li');
+        const link2 = document.createElement('a');
+        link2.setAttribute('href','signUp.html');
+        link2.innerText = 'Sign Up';
+        listItem2.appendChild(link2);
+        document.getElementById('headerNav').appendChild(listItem2);
+    }
     const curHall = await (await fetch('/currenthall')).json();
     let reviewData = await fetch('/reviewpage',{
         method:'POST',
