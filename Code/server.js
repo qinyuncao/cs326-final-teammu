@@ -1,20 +1,34 @@
 const express = require('express');
+const { MongoClient } = require("mongodb");
 const fs = require('fs');
+const e = require('express');
 const app = express();
 
 app.use(express.static('public'));
 app.use(express.json());
-const filename1 = 'username.json';
+
+const url = "mongodb+srv://qinyuncao:200047@cs326final-teammu.kyyvf.mongodb.net/finalProject?retryWrites=true&w=majority";
+const client = new MongoClient(url);
+
+client.connect(err => {
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log('Connected to the server!')
+        app.listen(process.env.PORT || 8080);
+    }
+});
+
+
 const filename2 = 'review.json';
 const filename3 = 'currentuser.json';
 const filename4 = 'currenthall.json'
-let users = [];
 let reviews= [];
 let currentUser = '';
 let currentHall = '';
 
-//port 
-const port = process.env.PORT || 8080;
+
 
 //Main page
 app.get('/',function(req,res){
@@ -47,15 +61,14 @@ app.post('/currenthall', function(req,res) {
 
 //When client ask for specific user
 //use this when sign up
+//*
 app.get('/users/:username',async function(req,res){
-
-    //reload first
-    reload();
     //Check if the database has this username, if not, return 404
-    const user = users.find(c => c.username === req.params.username);
-    if(!user){ 
+    const result = await client.db("finalProject").collection("username").findOne({'username':req.params.username});
+    if(!result){ 
         res.writeHead(200,{'Content-Type': 'application/javascript'});
-        res.end();}
+        res.end();
+    }
     else{
         res.writeHead(404,{'Content-Type': 'application/javascript'});
         res.end();
@@ -65,34 +78,30 @@ app.get('/users/:username',async function(req,res){
 
 //When client want to create new username and password
 //use this when sign up
+//*
 app.post('/users', async function(req,res){
-    //reload the user first
-    reload();
-
     const user = {
         email: req.body.email,
         username : req.body.username,
         password : req.body.password,
         id: Math.random().toString(16).slice(2)
     };
-    users.push(user);
-    let strIn = JSON.stringify(users);
-    fs.writeFileSync(filename1, strIn);
-    res.send(user);
+    await client.db("finalProject").collection('username').insertOne(user);
+    res.end();
 });
 
 //use this when log in
+//*
 app.get('/users/login/:username/:password',async function(req,res){
-    //reload first
-    reload();
-    //Check if the database has this username, if not, return 404
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].username === req.params.username && users[i].password === req.params.password) {
-            res.send(JSON.stringify(users[i].id));
-            res.end();
-        }
+    const result = await client.db("finalProject").collection("username").findOne({'username':req.params.username,'password':req.params.password});
+    if(result){ 
+        res.writeHead(200,{'Content-Type': 'application/javascript'});
+        res.end();
     }
-    res.send(JSON.stringify(''));
+    else{
+        res.writeHead(404,{'Content-Type': 'application/javascript'});
+        res.end();
+    }
 });
 
 //Use this when write a review
@@ -207,6 +216,3 @@ function reload() {
     }
 }
 
-app.listen(port,() => {
-    console.log(`Server listening at http://localhost:${port}`);
-})

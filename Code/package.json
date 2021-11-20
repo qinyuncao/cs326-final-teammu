@@ -12,7 +12,8 @@
   "author": "Qinyun Cao",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongodb": "^4.2.0"
   },
   "engines": {
     "node": "14.x"
