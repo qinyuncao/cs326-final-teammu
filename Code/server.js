@@ -186,13 +186,6 @@ app.post('/increaselikedislike', async function(req,res) {
 
 //reload the database
 function reload() {
-    if (fs.existsSync(filename1)) {
-        let someStr = fs.readFileSync(filename1);
-        users = JSON.parse(someStr);
-    }
-    else {
-        users = [];
-    }
     if (fs.existsSync(filename2)) {
         let someStr2 = fs.readFileSync(filename2);
         reviews = JSON.parse(someStr2);
