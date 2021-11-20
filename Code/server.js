@@ -32,7 +32,13 @@ let currentHall = '';
 
 //Main page
 app.get('/',function(req,res){
-    res.sendFile(__dirname + '/public/mainPage.html');
+    const curuserid = JSON.parse(fs.readFileSync(filename3));
+    if (curuserid) {
+        res.sendFile(__dirname + '/public/mainPage2.html');
+    }
+    else {
+        res.sendFile(__dirname + '/public/mainPage.html');
+    }
 });
 
 app.get('/currentuser', function(req,res) {
