@@ -113,15 +113,10 @@ app.get('/users/login/:username/:password',async function(req,res){
 //Use this when write a review
 //Save everything they write
 app.post('/review',async function(req,res){
-    //reload first
-    reload();
-    //Check if the database has this username, if not, return 404
     const review = req.body;
     review.reviewid = Math.random().toString(16).slice(2);
-    reviews.push(review);
-    let strIn = JSON.stringify(reviews);
-    fs.writeFileSync(filename2, strIn);
-    res.send(reviews);
+    await client.db("finalProject").collection('reviews').insertOne(review);
+    res.end();
 });
 
 //use this when get the reviews for rank page
