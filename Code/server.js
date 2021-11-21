@@ -32,7 +32,13 @@ let currentHall = '';
 
 //Main page
 app.get('/',function(req,res){
-    res.sendFile(__dirname + '/public/mainPage.html');
+    const curuserid = JSON.parse(fs.readFileSync(filename3));
+    if (curuserid) {
+        res.sendFile(__dirname + '/public/mainPage2.html');
+    }
+    else {
+        res.sendFile(__dirname + '/public/mainPage.html');
+    }
 });
 
 app.get('/currentuser', function(req,res) {
@@ -108,25 +114,17 @@ app.get('/users/login/:username/:password',async function(req,res){
 
 //Use this when write a review
 //Save everything they write
-//*-
+//*
 app.post('/review',async function(req,res){
     //reload first
     reload();
     //Check if the database has this username, if not, return 404
-    // const result = await client.db("finalProject").collection("username").findOne({'username':req.params.username});
-    // if(result){ 
-        const userReview = {
-            username : req.body.username,
-            review : req.body.review,
-            reviewid: Math.random().toString(16).slice(2)
-        };
-        await client.db("finalProject").collection('hallreview').insertOne(userReview);
-        res.end();
-    // }
-    // else{
-    //     res.writeHead(404,{'Content-Type': 'application/javascript'});
-    //     res.end();
-    // }
+    const userReview = {
+        review : req.body.review,
+        reviewid: Math.random().toString(16).slice(2)
+    };
+    await client.db("finalProject").collection('reviews').insertOne(userReview);
+    res.end();
 });
 
 //use this when get the reviews for rank page
