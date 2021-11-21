@@ -37,11 +37,13 @@ app.get('/',function(req,res){
 
 app.get('/currentuser', function(req,res) {
     reload();
+    res.writeHead(200, {"Content-Type" : "text/javascript"});
     res.send(JSON.stringify(currentUser));
 });
 
 app.get('/currenthall', function(req,res) {
     reload();
+    res.writeHead(200, {"Content-Type" : "text/javascript"});
     res.send(JSON.stringify(currentHall));
 });
 
@@ -106,16 +108,25 @@ app.get('/users/login/:username/:password',async function(req,res){
 
 //Use this when write a review
 //Save everything they write
+//*-
 app.post('/review',async function(req,res){
     //reload first
     reload();
     //Check if the database has this username, if not, return 404
-    const review = req.body;
-    review.reviewid = Math.random().toString(16).slice(2);
-    reviews.push(review);
-    let strIn = JSON.stringify(reviews);
-    fs.writeFileSync(filename2, strIn);
-    res.send(reviews);
+    // const result = await client.db("finalProject").collection("username").findOne({'username':req.params.username});
+    // if(result){ 
+        const userReview = {
+            username : req.body.username,
+            review : req.body.review,
+            reviewid: Math.random().toString(16).slice(2)
+        };
+        await client.db("finalProject").collection('hallreview').insertOne(userReview);
+        res.end();
+    // }
+    // else{
+    //     res.writeHead(404,{'Content-Type': 'application/javascript'});
+    //     res.end();
+    // }
 });
 
 //use this when get the reviews for rank page
@@ -146,6 +157,7 @@ app.get('/reviewrank',async function(req,res){
     res.send(allHalls.sort((a,b) => b.totalscore - a.totalscore));
 });
 
+//*
 app.post('/reviewpage', async function(req,res){
     //reload first
     reload();
@@ -156,9 +168,11 @@ app.post('/reviewpage', async function(req,res){
             hallReviews.push(reviews[i]);
         }
     }
-    res.send(hallReviews);
+    await client.db("finalProject").collection('hallreview').insertOne(hallReviews);
+    res.end();
 });
 
+//
 app.post('/deletereview', async function(req,res) {
     reload();
     const deleteReview = req.body.reviewid;
