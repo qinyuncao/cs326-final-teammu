@@ -118,7 +118,6 @@ app.get('/users/login/:username/:password',async function(req,res){
 app.post('/review',async function(req,res){
     //reload first
     reload();
-    //Check if the database has this username, if not, return 404
     const userReview = {
         review : req.body.review,
         reviewid: Math.random().toString(16).slice(2)
@@ -170,17 +169,20 @@ app.post('/reviewpage', async function(req,res){
     res.end();
 });
 
-//
+//*-
 app.post('/deletereview', async function(req,res) {
     reload();
     const deleteReview = req.body.reviewid;
-    for (let i=0; i < reviews.length; i++) {
-        if (reviews[i].reviewid === deleteReview) {
-            reviews.splice(i,1);
-            fs.writeFileSync(filename2, JSON.stringify(reviews));
-            res.end('Review Deleted');
-        }
-    }
+    await client.db("finalProject").collection('reviews').deleteOne(deleteReview);
+    res.end('Review Deleted');
+
+    // for (let i=0; i < reviews.length; i++) {
+    //     if (reviews[i].reviewid === deleteReview) {
+    //         reviews.splice(i,1);
+    //         fs.writeFileSync(filename2, JSON.stringify(reviews));
+    //         res.end('Review Deleted');
+    //     }
+    // }
 });
 
 app.post('/increaselikedislike', async function(req,res) {
