@@ -108,7 +108,9 @@ async function renderReviews(reviewData,curUser) {
         //Get number of likes for the review
         likeCount.innerText = reviewData[i].likecount.toString();
         
-        likeImg.addEventListener('click',likeBut);
+        if (curUser) {
+            likeImg.addEventListener('click',likeBut);
+        }
 
         async function likeBut() {
             await fetch('/increaselikedislike',{
