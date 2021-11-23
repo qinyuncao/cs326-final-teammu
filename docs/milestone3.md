@@ -23,7 +23,6 @@ UMA DormReview
         id: String (Generated ID linked with the user)
     }
 
-
     reviews document
     {
         hall: String (Selected residence hall linked with the review)
@@ -52,3 +51,5 @@ UMA DormReview
         index: Integer (Index of item in document. Only one and always 0)
         hallid: String (The current hall (ex. Crabtree Hall) which is being explored on the review page)
     }
+    
+### **Division Of Labor**:
