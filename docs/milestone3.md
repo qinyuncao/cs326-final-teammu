@@ -13,11 +13,17 @@ UMA DormReview
 
 ### **Database Description**:
 username document
+
 {
+
   email: String (Inputed UMass email linked with the user)
+  
   username: String (Inputed Username linked with the user)
+  
   password: String (Inputted Password linked with the user)
+  
   id: String (Generated ID linked with the user)
+  
 }
 
 reviews document
