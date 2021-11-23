@@ -149,7 +149,7 @@ async function renderReviews(reviewData,curUser) {
             likeImg.removeEventListener('click',likeBut);
         }
 
-        if (curUser) {
+        if (curUser && reviewData[i].reviewuserid !== curUser) {
             likeImg.addEventListener('click',likeBut);
             dislikeImg.addEventListener('click',dislikeBut);
         }
