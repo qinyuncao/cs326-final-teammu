@@ -7,12 +7,12 @@ app.use(express.json());
 
 
 let uri;
-if(!process.env.MONGODB_URI) {
-    const secrets = require('./secrets.json');
-    uri = secrets.uri;
+if(process.env.MONGODB_URI) {
+    uri = process.env.MONGODB_URI;
  }
  else {
-    uri = process.env.MONGODB_URI;
+    const secrets = require('./secrets.json');
+    uri = secrets.uri;
  }
 
 const client = new MongoClient(uri);
