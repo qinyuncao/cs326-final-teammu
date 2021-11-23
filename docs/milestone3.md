@@ -12,7 +12,7 @@ UMA DormReview
 - Yingxun Wei : **Laurenwei**
 
 ### **Database Description**:
-    username document
+    users document
     {
         email: String (Inputed UMass email linked with the user)
   
