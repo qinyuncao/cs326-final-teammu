@@ -6,16 +6,16 @@ app.use(express.static('public'));
 app.use(express.json());
 
 
-let url;
+let uri;
 if(!process.env.MONGODB_URI) {
     const secrets = require('./secrets.json');
-    url = secrets.url;
+    uri = secrets.uri;
  }
  else {
-    url = process.env.MONGODB_URI;
+    uri = process.env.MONGODB_URI;
  }
 
-const client = new MongoClient(url);
+const client = new MongoClient(uri);
 
 client.connect(err => {
     if(err){
