@@ -107,10 +107,6 @@ async function renderReviews(reviewData,curUser) {
 
         //Get number of likes for the review
         likeCount.innerText = reviewData[i].likecount.toString();
-        
-        if (curUser) {
-            likeImg.addEventListener('click',likeBut);
-        }
 
         async function likeBut() {
             await fetch('/increaselikedislike',{
@@ -122,7 +118,9 @@ async function renderReviews(reviewData,curUser) {
             });
 
             likeCount.innerText = (reviewData[i].likecount + 1).toString();
-            likeImg.removeEventListener('click',likeBut)
+            likeImg.style.opacity = '1';
+            likeImg.removeEventListener('click',likeBut);
+            dislikeImg.removeEventListener('click',dislikeBut);
         }
 
         const dislikeImg = document.createElement('input');
@@ -136,8 +134,6 @@ async function renderReviews(reviewData,curUser) {
         //Get number of dislikes for the review
         dislikeCount.innerText = reviewData[i].dislikecount.toString();
 
-        dislikeImg.addEventListener('click',dislikeBut);
-
         async function dislikeBut() {
             await fetch('/increaselikedislike',{
                 method:'POST',
@@ -148,7 +144,14 @@ async function renderReviews(reviewData,curUser) {
             });
 
             dislikeCount.innerText = (reviewData[i].dislikecount + 1).toString();
+            dislikeImg.style.opacity = '1';
             dislikeImg.removeEventListener('click',dislikeBut);
+            likeImg.removeEventListener('click',likeBut);
+        }
+
+        if (curUser) {
+            likeImg.addEventListener('click',likeBut);
+            dislikeImg.addEventListener('click',dislikeBut);
         }
 
         likedisArea.appendChild(likeImg);
