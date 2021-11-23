@@ -40,22 +40,22 @@ app.get('/',async function(req,res){
 
 app.get('/currentuser',async function(req,res) {
     const result = await client.db("finalProject").collection('currentuser').findOne({'index':0});
-    res.send(JSON.stringify(result.userid));
+    res.end(JSON.stringify(result.userid));
 });
 
 app.get('/currenthall',async function(req,res) {
     const result = await client.db("finalProject").collection('currenthall').findOne({'index':0});
-    res.send(JSON.stringify(result.hallid));
+    res.end(JSON.stringify(result.hallid));
 });
 
 app.post('/currentuser',async function(req,res) {
     await client.db("finalProject").collection('currentuser').updateOne({'index':0},{$set: {userid: req.body.user}});
-    res.send(JSON.stringify('Current User Updated'));
+    res.end(JSON.stringify('Current User Updated'));
 });
 
 app.post('/currenthall',async function(req,res) {
     await client.db("finalProject").collection('currenthall').updateOne({'index':0},{$set: {hallid: req.body.hall}});
-    res.send(JSON.stringify('Current Hall Updated'));
+    res.end(JSON.stringify('Current Hall Updated'));
 });
 
 //When client ask for specific user
@@ -86,7 +86,7 @@ app.post('/users', async function(req,res){
         id: Math.random().toString(16).slice(2)
     };
     await client.db("finalProject").collection('username').insertOne(user);
-    res.end();
+    res.end(JSON.stringify('User Added!'));
 });
 
 //use this when log in
@@ -135,7 +135,7 @@ app.get('/reviewrank',async function(req,res){
             delete allHalls[j].count;
         }
     }
-    res.send(allHalls.sort((a,b) => b.totalscore - a.totalscore));
+    res.end(allHalls.sort((a,b) => b.totalscore - a.totalscore));
 });
 
 app.post('/reviewpage', async function(req,res){
@@ -147,7 +147,7 @@ app.post('/reviewpage', async function(req,res){
             hallReviews.push(reviews[i]);
         }
     }
-    res.send(hallReviews);
+    res.end(hallReviews);
 });
 
 app.post('/deletereview', async function(req,res) {
