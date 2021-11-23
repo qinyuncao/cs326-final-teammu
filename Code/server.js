@@ -5,7 +5,16 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.json());
 
-const url = "mongodb+srv://qinyuncao:200047@cs326final-teammu.kyyvf.mongodb.net/finalProject?retryWrites=true&w=majority";
+
+let url;
+if(!process.env.MONGODB_URI) {
+    const secrets = require('./secrets.json');
+    url = secrets.url;
+ }
+ else {
+    url = process.env.MONGODB_URI;
+ }
+
 const client = new MongoClient(url);
 
 client.connect(err => {
@@ -14,7 +23,7 @@ client.connect(err => {
     }
     else{
         console.log('Connected to the server!')
-        app.listen(process.env.PORT || 8208);
+        app.listen(process.env.PORT || 8210);
     }
 });
 
