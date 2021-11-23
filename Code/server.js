@@ -7,13 +7,13 @@ app.use(express.json());
 
 
 let uri;
-if(process.env.MONGODB_URI) {
-    uri = process.env.MONGODB_URI;
-}
-else {
+if(!process.env.MONGODB_URI) {
     const secrets = require('./secrets.json');
     uri = secrets.uri;
-}
+ }
+ else {
+    uri = process.env.MONGODB_URI;
+ }
 
 const client = new MongoClient(uri);
 
@@ -23,7 +23,7 @@ client.connect(err => {
     }
     else{
         console.log('Connected to the server!')
-        app.listen(process.env.PORT || 8080);
+        app.listen(process.env.PORT || 8212);
     }
 });
 
@@ -40,22 +40,22 @@ app.get('/',async function(req,res){
 
 app.get('/currentuser',async function(req,res) {
     const result = await client.db("finalProject").collection('currentuser').findOne({'index':0});
-    res.end(JSON.stringify(result.userid));
+    res.send(JSON.stringify(result.userid));
 });
 
 app.get('/currenthall',async function(req,res) {
     const result = await client.db("finalProject").collection('currenthall').findOne({'index':0});
-    res.end(JSON.stringify(result.hallid));
+    res.send(JSON.stringify(result.hallid));
 });
 
 app.post('/currentuser',async function(req,res) {
     await client.db("finalProject").collection('currentuser').updateOne({'index':0},{$set: {userid: req.body.user}});
-    res.end(JSON.stringify('Current User Updated'));
+    res.send(JSON.stringify('Current User Updated'));
 });
 
 app.post('/currenthall',async function(req,res) {
     await client.db("finalProject").collection('currenthall').updateOne({'index':0},{$set: {hallid: req.body.hall}});
-    res.end(JSON.stringify('Current Hall Updated'));
+    res.send(JSON.stringify('Current Hall Updated'));
 });
 
 //When client ask for specific user
@@ -63,7 +63,7 @@ app.post('/currenthall',async function(req,res) {
 //*
 app.get('/users/:username',async function(req,res){
     //Check if the database has this username, if not, return 404
-    const result = await client.db("finalProject").collection("username").findOne({'username':req.params.username});
+    const result = await client.db("finalProject").collection("users").findOne({'username':req.params.username});
     if(!result){ 
         res.writeHead(200,{'Content-Type': 'application/javascript'});
         res.end();
@@ -85,14 +85,14 @@ app.post('/users', async function(req,res){
         password : req.body.password,
         id: Math.random().toString(16).slice(2)
     };
-    await client.db("finalProject").collection('username').insertOne(user);
-    res.end(JSON.stringify('User Added!'));
+    await client.db("finalProject").collection('users').insertOne(user);
+    res.end();
 });
 
 //use this when log in
 //*
 app.get('/users/login/:username/:password',async function(req,res){
-    const result = await client.db("finalProject").collection("username").findOne({'username':req.params.username,'password':req.params.password});
+    const result = await client.db("finalProject").collection("users").findOne({'username':req.params.username,'password':req.params.password});
     if(result){ 
         res.end(JSON.stringify(result.id));
     }
@@ -135,7 +135,7 @@ app.get('/reviewrank',async function(req,res){
             delete allHalls[j].count;
         }
     }
-    res.end(allHalls.sort((a,b) => b.totalscore - a.totalscore));
+    res.send(allHalls.sort((a,b) => b.totalscore - a.totalscore));
 });
 
 app.post('/reviewpage', async function(req,res){
@@ -147,7 +147,7 @@ app.post('/reviewpage', async function(req,res){
             hallReviews.push(reviews[i]);
         }
     }
-    res.end(hallReviews);
+    res.send(hallReviews);
 });
 
 app.post('/deletereview', async function(req,res) {
