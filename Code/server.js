@@ -9,11 +9,11 @@ app.use(express.json());
 let uri;
 if(process.env.MONGODB_URI) {
     uri = process.env.MONGODB_URI;
- }
- else {
+}
+else {
     const secrets = require('./secrets.json');
     uri = secrets.uri;
- }
+}
 
 const client = new MongoClient(uri);
 
