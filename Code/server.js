@@ -23,7 +23,7 @@ client.connect(err => {
     }
     else{
         console.log('Connected to the server!')
-        app.listen(process.env.PORT || 8210);
+        app.listen(process.env.PORT || 8080);
     }
 });
 
