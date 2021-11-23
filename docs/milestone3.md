@@ -23,6 +23,7 @@ UMA DormReview
         id: String (Generated ID linked with the user)
     }
 
+
     reviews document
     {
         hall: String (Selected residence hall linked with the review)
