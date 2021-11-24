@@ -71,4 +71,4 @@ Moiz Saqib: Implemented database and CRUD operations. Implemented and finalized 
 
 Qinyun Cao: Implemented database and CRUD operations. Plan the functions that need to be added later, and created the database. Add some image to make front end look better.
 
-Yingxun Wei: 
+Yingxun Wei: Implemented database and CRUD operations, and fixed some errors.
