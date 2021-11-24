@@ -69,6 +69,6 @@ UMA DormReview
 ### **Division Of Labor**:
 Moiz Saqib: Implemented database and CRUD operations. Implemented and finalized frontend Javascript logic.
 
-Qinyun Cao: 
+Qinyun Cao: Implemented database and CRUD operations. Plan the functions that need to be added later, and created the database.
 
 Yingxun Wei: 
