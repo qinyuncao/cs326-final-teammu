@@ -7,6 +7,7 @@
     background-position: center;
     background-size: cover;
     position: relative;
+    margin: auto;
 }
 
 nav{
@@ -54,8 +55,8 @@ nav img{
 }
 
 body {
-    background-image: linear-gradient(rgb(238, 225, 207), rgb(255, 209, 149));
-    padding-bottom: 600px;
+    background-image: linear-gradient(rgb(242, 239, 222), rgb(240, 218, 188));
+    padding-bottom: 800px;
 }
 
 .top {

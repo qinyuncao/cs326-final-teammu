@@ -47,10 +47,10 @@ nav img{
 }
 
 body {
-    background-image: linear-gradient(rgb(238, 225, 207), rgb(255, 209, 149));
+    background-image: linear-gradient(rgb(242, 239, 222), rgb(240, 218, 188));
+    padding-bottom: 250px;
     padding-left: 75px;
     padding-right: 75px;
-    padding-bottom: 30px;
 }
 .rank {
     padding: 6px;
