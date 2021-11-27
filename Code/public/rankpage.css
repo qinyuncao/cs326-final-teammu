@@ -65,6 +65,9 @@ body {
     font-family: 'Andada Pro', serif;
     margin-left: 85px;
 }
+#rankHall {
+    text-align: center;
+}
 .rank1 {
     height: 35px;
     width: 35px;
@@ -77,6 +80,10 @@ body {
     font-weight:500;
     background-color: #CE4747;
     margin-left: 20px;
+}
+.rank1:hover {
+    background-color: maroon;
+    color: white;
 }
 .hallname1 {
     border-radius: 5px;
@@ -107,6 +114,10 @@ body {
     font-weight:500;
     background-color: #CE4747;
     margin-left: 26px;
+}
+.rank2:hover {
+    background-color: maroon;
+    color: white;
 }
 .hallname2 {
     border-radius: 5px;
@@ -170,5 +181,19 @@ progress::-webkit-progress-value {
     padding-bottom: 20px;
 }
 .overallscore {
+    font-size: x-large;
     margin-left: 1168px;
+    display: none;
+}
+.bigFont {
+    font-size: x-large;
+}
+
+.midFont {
+    font-size: larger;
+}
+#noReviews {
+    padding-left: 85px;
+    padding-top: 20px;
+    font-size: large;
 }

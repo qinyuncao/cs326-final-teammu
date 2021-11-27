@@ -50,7 +50,7 @@ nav img{
     width: 100%;
 }
 body {
-    background-image: url("imageForWeb/writeReviewB.jpg");
+    background-image: linear-gradient(rgb(242, 239, 222), rgb(240, 218, 188));
     padding-left: 75px;
     padding-right: 75px;
 }

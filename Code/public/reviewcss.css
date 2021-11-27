@@ -121,6 +121,7 @@ body {
 .likedis {
     float: right;
     padding-right: 12px;
+    padding-top: 12px;
 }
 .resize {
     width:36px;
@@ -128,8 +129,15 @@ body {
     padding-left: 20px;
     opacity: 0.5;
 }
-.resize:hover {
+.resizeActive {
+    width:36px;
+    height: auto;
+    padding-left: 20px;
+    opacity: 0.5;
+}
+.resizeActive:hover {
     width: 39px;
+    opacity: 1;
 }
 .likedislike {
     font-size:medium;
@@ -147,4 +155,10 @@ body {
     font-size: smaller;
     float: right;
     padding-right: 12px;
+}
+.revspace {
+    padding-bottom: 10px;
+}
+.tagspace {
+    padding: 3px;
 }
