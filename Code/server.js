@@ -23,7 +23,7 @@ client.connect(err => {
     }
     else{
         console.log('Connected to the server!')
-        app.listen(process.env.PORT || 8084);
+        app.listen(process.env.PORT || 8086);
     }
 });
 
@@ -141,12 +141,13 @@ app.get('/reviewrank',async function(req,res){
 app.post('/reviewpage', async function(req,res){
     const reviews = await client.db("finalProject").collection('reviews').find({}).toArray();
     const chosenHall = req.body.hall;
-    const hallReviews = [];
+    let hallReviews = [];
     for (let i = 0; i<reviews.length; i++) {
         if(reviews[i].hall === chosenHall) {
             hallReviews.push(reviews[i]);
         }
     }
+    hallReviews = hallReviews.sort((a,b) => (b.likecount + b.dislikecount) - (a.likecount + a.dislikecount));
     res.send(hallReviews.sort((a,b) => (b.likecount - b.dislikecount) - (a.likecount - a.dislikecount)));
 });
 
