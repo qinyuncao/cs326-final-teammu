@@ -23,7 +23,7 @@ client.connect(err => {
     }
     else{
         console.log('Connected to the server!')
-        app.listen(process.env.PORT || 8080);
+        app.listen(process.env.PORT || 8084);
     }
 });
 
@@ -147,7 +147,7 @@ app.post('/reviewpage', async function(req,res){
             hallReviews.push(reviews[i]);
         }
     }
-    res.send(hallReviews);
+    res.send(hallReviews.sort((a,b) => (b.likecount - b.dislikecount) - (a.likecount - a.dislikecount)));
 });
 
 app.post('/deletereview', async function(req,res) {
