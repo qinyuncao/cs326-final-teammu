@@ -89,23 +89,24 @@ Log In (15 Points):
 
 Write A Review (10 Points):
 
-Must fill in all fields to submit a review (10 Points)
+- Must fill in all fields to submit a review (10 Points)
 
 Residential Hall Rankings Page (25 Points):
 
-Halls are ranked by their average score from the reviews from highest to lowest (15 Points)
+- Halls are ranked by their average score from the reviews from highest to lowest (15 Points)
 
-When a hall is clicked, it sends you to the specific review page for that hall (10 Points)
+- When a hall is clicked, it sends you to the specific review page for that hall (10 Points)
 
 Review Page (45 Points):
-The total average score, five categories average score, reviews with likes and dislikes, and random tags are all shown (10 Points)
 
-Review are sorted from top to bottom by how many likes they have compared to dislikes and how many total interactions they have (10 Points)
+- The total average score, five categories average score, reviews with likes and dislikes, and random tags are all shown (10 Points)
 
-Own review can be deleted by pressing the delete button and the page is automatically updated (5 Points)
+- Review are sorted from top to bottom by how many likes they have compared to dislikes and how many total interactions they have (10 Points)
 
-Own review can not be liked. Can only like if logged in. Can like/dislike other reviews but only once (20 Points)
+- Own review can be deleted by pressing the delete button and the page is automatically updated (5 Points)
+
+- Own review can not be liked. Can only like if logged in. Can like/dislike other reviews but only once (20 Points)
 
 Log Out (5 Points):
 
-When the Log Out link is pressed in the header, the user is redirected to the home page with Log In and Sign Up in the header (5 Points)
+- When the Log Out link is pressed in the header, the user is redirected to the home page with Log In and Sign Up in the header (5 Points)
