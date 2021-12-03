@@ -73,28 +73,39 @@ When a users opens the application and find themseleves on the home page, if the
 Users are authenticated by checking if the inputted username and password is in the database. If so, they are set as the current user and have access to all features of the application. These features include the ability to write reviews, like/dislike other reviews, and delete own reviews. When a user is authenticated, the main page changes to suggest the user to explore the rankings as opposed to signing up if they were not logged in.
 
 ### **Division Of Labor**: 
-insert division of labor
+- Qinyun Cao : 
+
+- Moiz Saqib : Finalized idea for project with group. Set up wireframes primarily for the 'Write A Review' page and the 'Residential Hall Review' page. Worked collabortively with groupmates to finalize wireframes for all UIs with detailed creative changes. Coded specific aspects of all HTML and CSS for the app. Primary inintial work involved the 'Write A Review' page, 'Residential Hall Review' page, and 'Residential Hall Ranking' page. Coded frontend Javascript logic and page population through DOM surgery for all pages which needed it. Implemented GET and POST requests to connect the node.js server with the frontend. Implemented about half of the APIs needed. Finalized the connection of the external mongoDB database to the server. Added some last minute functionality and visual changes.
+
+- Yingxun Wei : 
 
 ### **Conclusion**: 
-insert conclusion
+This project was very challenging but very fulfilling for our group. There were many times that we found ourselves stuck but this project urged us to work together and be creative in finding solutions together through the concepts we learned in class. As we continued to work, we found ourselves very commited and passionate about the application we were making as it began to come together. We can confidently say that our application, while not being perfect, reached our vision through a lot of hard work and we are happy about this. It was particularly difficult for us to implement functional user authentication as well as initially setting up our node.js server. We wished we had more knowledge on this before we started this project.
 
 ### **Rubric**: 
-insert rubric
-Log In:
-Username and Password used to sign up work and user is redirected to the home page
+Log In (15 Points):
 
-Write A Review:
-Must fill in all fields to submit a review
+Username and Password used to sign up work and user is redirected to the home page (15 Points)
 
-Residential Hall Rankings Page:
-Halls are ranked by their average score from the reviews from highest to lowest
-When click on a hall, it sends you to the specific review page for that hall
+Write A Review (10 Points):
 
-Review Page:
-The total average score, five categories average score, reviews with likes and dislikes, and random tags are all shown
-Review are sorted from top to bottom by how many likes they have compared to dislikes and how many total interactions they have
-Own review can be deleted by pressing the delete button and the page is automatically updated
-Own review can not be liked. Can not like if not logged in. Can like other reviews but than not dislike, vice verca.
+Must fill in all fields to submit a review (10 Points)
 
-Log Out:
-Redirects to home page
+Residential Hall Rankings Page (25 Points):
+
+Halls are ranked by their average score from the reviews from highest to lowest (15 Points)
+
+When a hall is clicked, it sends you to the specific review page for that hall (10 Points)
+
+Review Page (45 Points):
+The total average score, five categories average score, reviews with likes and dislikes, and random tags are all shown (10 Points)
+
+Review are sorted from top to bottom by how many likes they have compared to dislikes and how many total interactions they have (10 Points)
+
+Own review can be deleted by pressing the delete button and the page is automatically updated (5 Points)
+
+Own review can not be liked. Can only like if logged in. Can like/dislike other reviews but only once (20 Points)
+
+Log Out (5 Points):
+
+When the Log Out link is pressed in the header, the user is redirected to the home page with Log In and Sign Up in the header (5 Points)
