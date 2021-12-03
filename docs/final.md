@@ -82,10 +82,10 @@ Users are authenticated by checking if the inputted username and password is in 
 ### **Conclusion**: 
 This project was very challenging but very fulfilling for our group. There were many times that we found ourselves stuck but this project urged us to work together and be creative in finding solutions together through the concepts we learned in class. As we continued to work, we found ourselves very commited and passionate about the application we were making as it began to come together. We can confidently say that our application, while not being perfect, reached our vision through a lot of hard work and we are happy about this. It was particularly difficult for us to implement functional user authentication as well as initially setting up our node.js server. We wished we had more knowledge on this before we started this project.
 
-### **Rubric**: 
+### **Rubric (100 Points Total)**: 
 Log In (15 Points):
 
-Username and Password used to sign up work and user is redirected to the home page (15 Points)
+- Username and Password used to sign up work and user is redirected to the home page (15 Points)
 
 Write A Review (10 Points):
 
