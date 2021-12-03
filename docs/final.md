@@ -83,6 +83,14 @@ Users are authenticated by checking if the inputted username and password is in 
 This project was very challenging but very fulfilling for our group. There were many times that we found ourselves stuck but this project urged us to work together and be creative in finding solutions together through the concepts we learned in class. As we continued to work, we found ourselves very commited and passionate about the application we were making as it began to come together. We can confidently say that our application, while not being perfect, reached our vision through a lot of hard work and we are happy about this. It was particularly difficult for us to implement functional user authentication as well as initially setting up our node.js server. We wished we had more knowledge on this before we started this project.
 
 ### **Rubric (100 Points Total)**: 
+Sign Up (15 Points):
+
+- Can only sign up with UMass email (5 Points)
+
+- Can only sign up with unique username. Can test with username 'moiz' (5 Points)
+
+- Passwords must match and be at least 8 characters long (5 Points)
+
 Log In (15 Points):
 
 - Username and password which are used to sign up work and the user is redirected to the home page with 'Log Out' in the header (15 Points)
@@ -91,21 +99,21 @@ Write A Review (10 Points):
 
 - Review is only submitted if all fields are filled in (10 Points)
 
-Residential Hall Rankings Page (25 Points):
+Residential Hall Rankings Page (20 Points):
 
-- Halls are ranked by their average score from the reviews from highest to lowest (15 Points)
+- Halls are ranked by their average score from the reviews from highest to lowest (10 Points)
 
 - When a hall is clicked, it sends you to the specific review page for that hall (10 Points)
 
-Review Page (45 Points):
+Review Page (35 Points):
 
 - The total average score, five categories average score, reviews with likes and dislikes, and random tags are all displayed correctly on the user interface (10 Points)
 
-- Review are sorted from top to bottom by how many likes they have compared to dislikes and how many total likes and dislikes they have (10 Points)
+- Review are sorted from top to bottom by how many likes they have compared to dislikes and how many total likes and dislikes they have (5 Points)
 
 - Own review can be deleted by pressing the delete button and the page is automatically updated (5 Points)
 
-- Own review can not be liked or disliked. Can only like if the user is logged in. Can like/dislike other reviews but only once (20 Points)
+- Own review can not be liked or disliked. Can only like if the user is logged in. Can like/dislike other reviews but only once (15 Points)
 
 Log Out (5 Points):
 
