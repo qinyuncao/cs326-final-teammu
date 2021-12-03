@@ -2,7 +2,7 @@
 Team Mu
 
 ### **Application Name**: 
-UMA Dorm Review
+UMA Dorm Review (https://cs326-teammu.herokuapp.com/)
 
 ### **Semester**: 
 Fall 2021
@@ -85,11 +85,11 @@ This project was very challenging but very fulfilling for our group. There were 
 ### **Rubric (100 Points Total)**: 
 Log In (15 Points):
 
-- Username and Password used to sign up work and user is redirected to the home page (15 Points)
+- Username and password which are used to sign up work and the user is redirected to the home page with 'Log Out' in the header (15 Points)
 
 Write A Review (10 Points):
 
-- Must fill in all fields to submit a review (10 Points)
+- Review is only submitted if all fields are filled in (10 Points)
 
 Residential Hall Rankings Page (25 Points):
 
@@ -99,13 +99,13 @@ Residential Hall Rankings Page (25 Points):
 
 Review Page (45 Points):
 
-- The total average score, five categories average score, reviews with likes and dislikes, and random tags are all shown (10 Points)
+- The total average score, five categories average score, reviews with likes and dislikes, and random tags are all displayed correctly on the user interface (10 Points)
 
-- Review are sorted from top to bottom by how many likes they have compared to dislikes and how many total interactions they have (10 Points)
+- Review are sorted from top to bottom by how many likes they have compared to dislikes and how many total likes and dislikes they have (10 Points)
 
 - Own review can be deleted by pressing the delete button and the page is automatically updated (5 Points)
 
-- Own review can not be liked. Can only like if logged in. Can like/dislike other reviews but only once (20 Points)
+- Own review can not be liked or disliked. Can only like if the user is logged in. Can like/dislike other reviews but only once (20 Points)
 
 Log Out (5 Points):
 
