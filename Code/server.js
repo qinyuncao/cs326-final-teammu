@@ -7,13 +7,13 @@ app.use(express.json());
 
 
 let uri;
-if(process.env.MONGODB_URI) {
-    uri = process.env.MONGODB_URI;
-}
-else {
+if(!process.env.MONGODB_URI) {
     const secrets = require('./secrets.json');
     uri = secrets.uri;
-}
+ }
+ else {
+    uri = process.env.MONGODB_URI;
+ }
 
 const client = new MongoClient(uri);
 
@@ -23,7 +23,7 @@ client.connect(err => {
     }
     else{
         console.log('Connected to the server!')
-        app.listen(process.env.PORT || 8080);
+        app.listen(process.env.PORT || 8086);
     }
 });
 
@@ -38,46 +38,49 @@ app.get('/',async function(req,res){
     }
 });
 
+//Get the current the User 
 app.get('/currentuser',async function(req,res) {
     const result = await client.db("finalProject").collection('currentuser').findOne({'index':0});
     res.end(JSON.stringify(result.userid));
 });
 
+//Get the current hall
 app.get('/currenthall',async function(req,res) {
     const result = await client.db("finalProject").collection('currenthall').findOne({'index':0});
     res.end(JSON.stringify(result.hallid));
 });
 
+//Post the current user to the databse
 app.post('/currentuser',async function(req,res) {
     await client.db("finalProject").collection('currentuser').updateOne({'index':0},{$set: {userid: req.body.user}});
     res.end(JSON.stringify('Current User Updated'));
 });
 
+//Post the current hall to the database
 app.post('/currenthall',async function(req,res) {
     await client.db("finalProject").collection('currenthall').updateOne({'index':0},{$set: {hallid: req.body.hall}});
     res.end(JSON.stringify('Current Hall Updated'));
 });
 
+
 //When client ask for specific user
-//use this when sign up
-//*
+//use this when sign up, if the database has the username from front end, return 404
 app.get('/users/:username',async function(req,res){
     //Check if the database has this username, if not, return 404
-    const result = await client.db("finalProject").collection("username").findOne({'username':req.params.username});
+    const result = await client.db("finalProject").collection("users").findOne({'username':req.params.username});
     if(!result){ 
         res.writeHead(200,{'Content-Type': 'application/javascript'});
-        res.end();
+        res.end(JSON.stringify('Username Available!'));
     }
     else{
         res.writeHead(404,{'Content-Type': 'application/javascript'});
-        res.end();
+        res.end(JSON.stringify('Username Not Available!'));
     }
 
 });
 
 //When client want to create new username and password
 //use this when sign up
-//*
 app.post('/users', async function(req,res){
     const user = {
         email: req.body.email,
@@ -85,14 +88,13 @@ app.post('/users', async function(req,res){
         password : req.body.password,
         id: Math.random().toString(16).slice(2)
     };
-    await client.db("finalProject").collection('username').insertOne(user);
+    await client.db("finalProject").collection('users').insertOne(user);
     res.end(JSON.stringify('User Added!'));
 });
 
-//use this when log in
-//*
+//Log in information check, compare the information from client with the information in database.
 app.get('/users/login/:username/:password',async function(req,res){
-    const result = await client.db("finalProject").collection("username").findOne({'username':req.params.username,'password':req.params.password});
+    const result = await client.db("finalProject").collection("users").findOne({'username':req.params.username,'password':req.params.password});
     if(result){ 
         res.end(JSON.stringify(result.id));
     }
@@ -135,21 +137,24 @@ app.get('/reviewrank',async function(req,res){
             delete allHalls[j].count;
         }
     }
-    res.end(allHalls.sort((a,b) => b.totalscore - a.totalscore));
+    res.send(allHalls.sort((a,b) => b.totalscore - a.totalscore));
 });
 
+//Use this function to save the whole review page
 app.post('/reviewpage', async function(req,res){
     const reviews = await client.db("finalProject").collection('reviews').find({}).toArray();
     const chosenHall = req.body.hall;
-    const hallReviews = [];
+    let hallReviews = [];
     for (let i = 0; i<reviews.length; i++) {
         if(reviews[i].hall === chosenHall) {
             hallReviews.push(reviews[i]);
         }
     }
-    res.end(hallReviews);
+    hallReviews = hallReviews.sort((a,b) => (b.likecount + b.dislikecount) - (a.likecount + a.dislikecount));
+    res.send(hallReviews.sort((a,b) => (b.likecount - b.dislikecount) - (a.likecount - a.dislikecount)));
 });
 
+//Use this one to post the review has been deleted.
 app.post('/deletereview', async function(req,res) {
     const deleteReview = req.body.reviewid;
     await client.db("finalProject").collection('reviews').deleteOne({'reviewid':deleteReview});

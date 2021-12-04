@@ -1,5 +1,6 @@
 window.addEventListener('load',async() => {
     const curUser = await (await fetch('/currentuser')).json();
+
     if (curUser) {
         document.getElementById('homeButton').setAttribute('href','mainPage2.html');
         const listItem = document.createElement('li');
@@ -24,18 +25,20 @@ window.addEventListener('load',async() => {
         listItem2.appendChild(link2);
         document.getElementById('headerNav').appendChild(listItem2);
     }
+
     const curHall = await (await fetch('/currenthall')).json();
-    let reviewData = await fetch('/reviewpage',{
+
+    const reviewData = await (await fetch('/reviewpage',{
         method:'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({hall: curHall})
-    });
-    reviewData = await reviewData.json();
+    })).json();
+
     renderHall(curHall);
     renderScores(reviewData,curHall);
-    renderReviews(reviewData,curUser);
+    renderReviews(reviewData,curUser,curHall);
     renderTags(reviewData);
     renderBased(reviewData);
 });
@@ -45,13 +48,14 @@ function renderHall(curHall) {
     document.getElementById('chosenHall').innerText = curHall;
 }
 
-async function renderReviews(reviewData,curUser) {
+async function renderReviews(reviewData,curUser,curHall) {
     //Iterate through the number of individual reviews and render the review on the page
     for (let i=0; i<reviewData.length; i++) {
         const revcol = document.getElementById('revcol');
         const revcon = document.createElement('div');
         revcon.classList.add('border');
-        revcon.classList.add('border-dark')
+        revcon.classList.add('border-dark');
+        revcon.classList.add('revspace');
         const revdet = document.createElement('p');
         revdet.classList.add('revtext');
 
@@ -81,18 +85,33 @@ async function renderReviews(reviewData,curUser) {
                     },
                     body: JSON.stringify({reviewid: reviewData[i].reviewid})
                 });
-                
-                //deleting the review from the page and updating the page
-                revcon.remove();
-                linebreak.remove();
-                location.reload();
+
+                const reviewDataUpdate = await (await fetch('/reviewpage',{
+                    method:'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({hall: curHall})
+                })).json();
+
+                if (reviewDataUpdate.length > 0) {
+                    revcon.remove();
+                    linebreak.remove();
+                    location.reload();
+                }
+                else {
+                    alert('There are no more reviews for ' + curHall + '!');
+                    window.location.href = "rankpage.html";
+                    revcon.remove();
+                    linebreak.remove();
+                }
             });
         }
         const votedis = document.createElement('span');
         votedis.classList.add('vote');
 
         //Get sum of 5 categories for the review
-        votedis.innerText = 'Vote: ' + reviewData[i].totalscore.toString() + '/100';
+        votedis.innerText = 'Review Score: ' + reviewData[i].totalscore.toString() + '/100';
         revcon.appendChild(votedis);
 
         const likedisArea = document.createElement('span');
@@ -107,10 +126,6 @@ async function renderReviews(reviewData,curUser) {
 
         //Get number of likes for the review
         likeCount.innerText = reviewData[i].likecount.toString();
-        
-        if (curUser) {
-            likeImg.addEventListener('click',likeBut);
-        }
 
         async function likeBut() {
             await fetch('/increaselikedislike',{
@@ -122,7 +137,13 @@ async function renderReviews(reviewData,curUser) {
             });
 
             likeCount.innerText = (reviewData[i].likecount + 1).toString();
-            likeImg.removeEventListener('click',likeBut)
+            likeImg.classList.remove('resizeActive');
+            likeImg.classList.add('resize');
+            dislikeImg.classList.remove('resizeActive');
+            dislikeImg.classList.add('resize');
+            likeImg.style.opacity = '1';
+            likeImg.removeEventListener('click',likeBut);
+            dislikeImg.removeEventListener('click',dislikeBut);
         }
 
         const dislikeImg = document.createElement('input');
@@ -136,8 +157,6 @@ async function renderReviews(reviewData,curUser) {
         //Get number of dislikes for the review
         dislikeCount.innerText = reviewData[i].dislikecount.toString();
 
-        dislikeImg.addEventListener('click',dislikeBut);
-
         async function dislikeBut() {
             await fetch('/increaselikedislike',{
                 method:'POST',
@@ -148,7 +167,22 @@ async function renderReviews(reviewData,curUser) {
             });
 
             dislikeCount.innerText = (reviewData[i].dislikecount + 1).toString();
+            likeImg.classList.remove('resizeActive');
+            likeImg.classList.add('resize');
+            dislikeImg.classList.remove('resizeActive');
+            dislikeImg.classList.add('resize');
+            dislikeImg.style.opacity = '1';
             dislikeImg.removeEventListener('click',dislikeBut);
+            likeImg.removeEventListener('click',likeBut);
+        }
+
+        if (curUser && reviewData[i].reviewuserid !== curUser) {
+            likeImg.classList.remove('resize');
+            dislikeImg.classList.remove('resize');
+            likeImg.classList.add('resizeActive');
+            dislikeImg.classList.add('resizeActive');
+            likeImg.addEventListener('click',likeBut);
+            dislikeImg.addEventListener('click',dislikeBut);
         }
 
         likedisArea.appendChild(likeImg);
@@ -196,6 +230,7 @@ async function renderScores(reviewData,curHall) {
     document.getElementById('cleanscore').innerText = getAverageClean(reviewData).toString() + '/20';
     document.getElementById('cleanscore').style.background = 'linear-gradient(to right, maroon 0%, maroon ' + ((getAverageClean(reviewData)/20)*100).toString() + '%' + ', lightgray ' + ((getAverageClean(reviewData)/20)*100).toString() + '%' + ', lightgray 100%)';
 }
+
 function renderTags(reviewData) {
     //Given array of all tags for each hall, randomly select on load
     const tagList = getTags(reviewData);
@@ -214,8 +249,12 @@ function renderTags(reviewData) {
         tagword.classList.add('tagtext');
         tagword.innerText = randTag;
         tagbody.appendChild(tagword);
+        const tagSpace = document.createElement('span');
+        tagSpace.classList.add('tagspace');
+        tagbody.appendChild(tagSpace);
     }
 }
+
 function renderBased(reviewData) {
     if(reviewData.length === 1) {
         document.getElementById('totalrevs').innerText = '(Based on 1 Rating)';

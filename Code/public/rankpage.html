@@ -5,7 +5,10 @@
         <meta charset="UTF-8" />
         <title>Residential Hall Rankings</title>
         <script src="rankpage.js" defer></script>
+
         <link rel="stylesheet" href="rankpage.css" />
+        <link rel="icon" type="image/png" href="imageForWeb/favicon.png"/>
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -13,7 +16,7 @@
     <body>
         <section class ="header">
             <nav>
-              <a id='homeButton'><img src="imageForWeb/logo.jpeg" alt="logo for the site" width="300"></a>
+              <a id='homeButton'><img src="imageForWeb/logo.png" alt="logo for the site" width="300"></a>
               <div class = "nav-links">
                 <ul id="headerNav">
                   <li><a href="writereview.html">Write a<br>Review</a></li>
@@ -25,11 +28,10 @@
           </section>
         
         
-        <div class="top">Residential Hall Ranking</div>
-        <p class='overallscore'><b>Overall Score</b></p>
-        <center>
+        <div class="top">Residential Hall Rankings</div>
+        <p id="noReviews">There are no reviews. Click 'Write A Review' in the header to submit a review!</p>
+        <p id='scoreHead' class='overallscore'><b>Overall Score</b></p>
         <div id="rankHall">
         </div>
-        </center>
     </body>
 </html>

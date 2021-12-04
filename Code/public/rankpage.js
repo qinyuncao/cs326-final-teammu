@@ -2,7 +2,9 @@
 //Then this array is itterated through and the halls are dynamically added to the pages
 //i < length of array
 window.addEventListener('load',async() => {
+
     const curUser = await (await fetch('/currentuser')).json();
+
     if (curUser) {
         document.getElementById('homeButton').setAttribute('href','mainPage2.html');
         const listItem = document.createElement('li');
@@ -27,9 +29,13 @@ window.addEventListener('load',async() => {
         listItem2.appendChild(link2);
         document.getElementById('headerNav').appendChild(listItem2);
     }
+
     const response = await(await fetch('/reviewrank')).json();
+    
     for (let i=0; i < response.length; i++) {
         if (i===0) {
+            document.getElementById('noReviews').remove();
+            document.getElementById('scoreHead').style.display = 'block';
             const rankHall = document.getElementById('rankHall');
             const rankBlock = document.createElement('div');
             rankBlock.classList.add('spacer');
@@ -43,8 +49,10 @@ window.addEventListener('load',async() => {
     
             //get this info from the array
             hallName.innerText = response[i].hall;
-    
+
+            link.appendChild(rankNum);
             link.appendChild(hallName);
+            
             link.addEventListener('click',async() =>{
                 await fetch('/currenthall',{
                     method:'POST',
@@ -61,13 +69,14 @@ window.addEventListener('load',async() => {
     
             score.min = '0';
             score.max = '100';
+
             const textScore = document.createElement('b');
-    
+            textScore.classList.add('bigFont');
+
             //get this info from the array
-            textScore.innerText = response[i].totalscore.toString() + '%';
+            textScore.innerText = ' ' + response[i].totalscore.toString() + '%';
     
             rankHall.appendChild(rankBlock);
-            rankBlock.appendChild(rankNum);
             rankBlock.appendChild(link);
             rankBlock.appendChild(score);
             rankBlock.appendChild(textScore);
@@ -86,8 +95,10 @@ window.addEventListener('load',async() => {
     
             //get this info from the array
             hallName.innerText = response[i].hall;;
-    
+            
+            link.appendChild(rankNum);
             link.appendChild(hallName);
+
             link.addEventListener('click',async() =>{
                 await fetch('/currenthall',{
                     method:'POST',
@@ -105,12 +116,12 @@ window.addEventListener('load',async() => {
             score.min = '0';
             score.max = '100';
             const textScore = document.createElement('b');
+            textScore.classList.add('midFont');
     
             //get this info from the array
-            textScore.innerText = response[i].totalscore.toString() + '%';
+            textScore.innerText = ' ' + response[i].totalscore.toString() + '%';
     
             rankHall.appendChild(rankBlock);
-            rankBlock.appendChild(rankNum);
             rankBlock.appendChild(link);
             rankBlock.appendChild(score);
             rankBlock.appendChild(textScore);
