@@ -140,6 +140,21 @@ app.get('/reviewrank',async function(req,res){
     res.send(allHalls.sort((a,b) => b.totalscore - a.totalscore));
 });
 
+//Use this one to post the review has been deleted.
+app.post('/deletereview', async function(req,res) {
+    const deleteReview = req.body.reviewid;
+    await client.db("finalProject").collection('reviews').deleteOne({'reviewid':deleteReview});
+    res.end(JSON.stringify('Review Deleted'));
+});
+
+//Use this one to increase like/dislike 
+app.post('/increaselikedislike', async function(req,res) {
+    const likedislikeobj = {};
+    likedislikeobj[req.body.likedislike] = 1;
+    await client.db("finalProject").collection('reviews').updateOne({'reviewid':req.body.reviewid}, {$inc: likedislikeobj});
+    res.end(JSON.stringify('Review Updated'));
+});
+
 //Use this function to save the whole review page
 app.post('/reviewpage', async function(req,res){
     const reviews = await client.db("finalProject").collection('reviews').find({}).toArray();
@@ -152,18 +167,4 @@ app.post('/reviewpage', async function(req,res){
     }
     hallReviews = hallReviews.sort((a,b) => (b.likecount + b.dislikecount) - (a.likecount + a.dislikecount));
     res.send(hallReviews.sort((a,b) => (b.likecount - b.dislikecount) - (a.likecount - a.dislikecount)));
-});
-
-//Use this one to post the review has been deleted.
-app.post('/deletereview', async function(req,res) {
-    const deleteReview = req.body.reviewid;
-    await client.db("finalProject").collection('reviews').deleteOne({'reviewid':deleteReview});
-    res.end(JSON.stringify('Review Deleted'));
-});
-
-app.post('/increaselikedislike', async function(req,res) {
-    const likedislikeobj = {};
-    likedislikeobj[req.body.likedislike] = 1;
-    await client.db("finalProject").collection('reviews').updateOne({'reviewid':req.body.reviewid}, {$inc: likedislikeobj});
-    res.end(JSON.stringify('Review Updated'));
 });
