@@ -107,11 +107,9 @@ app.get('/users/login/:username/:password',async function(req,res){
 //Save everything they write
 app.post('/review',async function(req,res){
     //Check if the database has this username, if not, return 404
-    const reviews = {
-        review: req.body.review,
-        reviewid: Math.random().toString(16).slice(2)
-    };
-    await client.db("finalProject").collection('reviews').insertOne(reviews);
+    const review = req.body;
+    review.reviewid = Math.random().toString(16).slice(2);
+    await client.db("finalProject").collection('reviews').insertOne(review);
     res.end(JSON.stringify('Review Added!'));
 });
 
