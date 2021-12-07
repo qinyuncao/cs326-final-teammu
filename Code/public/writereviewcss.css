@@ -4,10 +4,6 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    padding-bottom: 20px;
-    padding-top: 50px;
-    padding-left: auto;
-    padding-right: auto;
 }
 
 nav{
@@ -57,7 +53,6 @@ body {
     background-image: linear-gradient(rgb(242, 239, 222), rgb(240, 218, 188));
     padding-left: 75px;
     padding-right: 75px;
-    padding-bottom: 190px;
 }
 .selectsec {
     padding: 30px;

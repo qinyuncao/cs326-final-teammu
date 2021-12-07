@@ -1,6 +1,5 @@
 window.addEventListener('load',async() => {
     const curUser = await (await fetch('/currentuser')).json();
-
     if (curUser) {
         document.getElementById('homeButton').setAttribute('href','mainPage2.html');
         const listItem = document.createElement('li');
@@ -25,9 +24,7 @@ window.addEventListener('load',async() => {
         listItem2.appendChild(link2);
         document.getElementById('headerNav').appendChild(listItem2);
     }
-
     const curHall = await (await fetch('/currenthall')).json();
-
     const reviewData = await (await fetch('/reviewpage',{
         method:'POST',
         headers: {
@@ -35,7 +32,6 @@ window.addEventListener('load',async() => {
         },
         body: JSON.stringify({hall: curHall})
     })).json();
-
     renderHall(curHall);
     renderScores(reviewData,curHall);
     renderReviews(reviewData,curUser,curHall);
@@ -230,7 +226,6 @@ async function renderScores(reviewData,curHall) {
     document.getElementById('cleanscore').innerText = getAverageClean(reviewData).toString() + '/20';
     document.getElementById('cleanscore').style.background = 'linear-gradient(to right, maroon 0%, maroon ' + ((getAverageClean(reviewData)/20)*100).toString() + '%' + ', lightgray ' + ((getAverageClean(reviewData)/20)*100).toString() + '%' + ', lightgray 100%)';
 }
-
 function renderTags(reviewData) {
     //Given array of all tags for each hall, randomly select on load
     const tagList = getTags(reviewData);
@@ -254,7 +249,6 @@ function renderTags(reviewData) {
         tagbody.appendChild(tagSpace);
     }
 }
-
 function renderBased(reviewData) {
     if(reviewData.length === 1) {
         document.getElementById('totalrevs').innerText = '(Based on 1 Rating)';

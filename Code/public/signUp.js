@@ -8,26 +8,21 @@ document.getElementById('signupbutton').addEventListener('click', async function
         username:inputUsername,
         password:inputPassword
     };
-
-    //valid Umass Emails
     if (!/\S+@\S+\.\S+/.test(inputEmail) || !/@umass\.edu$/.test(inputEmail)) {
         document.getElementById('userUpdate').innerText = 'Sorry! You must input a valid UMass Email.';
         return;
     }
 
-    //Fill all fields
     if(!(inputUsername && inputPassword && reInputPassword)) {
         document.getElementById('userUpdate').innerText = 'Sorry! You must fill in all fields.';
         return;
     }
 
-    //The passwords do not match
     if (!(inputPassword === reInputPassword)) {
         document.getElementById('userUpdate').innerText = 'Sorry! The passwords do not match.';
         return;
     }
 
-    //The password is not long enough
     if (inputPassword.length < 8) {
         document.getElementById('userUpdate').innerText = 'Sorry! The password must be at least 8 characters long.';
         return;

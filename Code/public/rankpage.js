@@ -2,9 +2,7 @@
 //Then this array is itterated through and the halls are dynamically added to the pages
 //i < length of array
 window.addEventListener('load',async() => {
-
     const curUser = await (await fetch('/currentuser')).json();
-
     if (curUser) {
         document.getElementById('homeButton').setAttribute('href','mainPage2.html');
         const listItem = document.createElement('li');
@@ -29,9 +27,7 @@ window.addEventListener('load',async() => {
         listItem2.appendChild(link2);
         document.getElementById('headerNav').appendChild(listItem2);
     }
-
     const response = await(await fetch('/reviewrank')).json();
-    
     for (let i=0; i < response.length; i++) {
         if (i===0) {
             document.getElementById('noReviews').remove();
