@@ -83,17 +83,17 @@ Users are authenticated by checking if the inputted username and password is in 
 This project was very challenging but very fulfilling for our group. There were many times that we found ourselves stuck but this project urged us to work together and be creative in finding solutions together through the concepts we learned in class. As we continued to work, we found ourselves very commited and passionate about the application we were making as it began to come together. We can confidently say that our application, while not being perfect, reached our vision through a lot of hard work and we are happy about this. It was particularly difficult for us to implement functional user authentication as well as initially setting up our node.js server. We wished we had more knowledge on this before we started this project.
 
 ### **Rubric (100 Points Total)**: 
-Sign Up (15 Points):
+Sign Up (10 Points):
 
 - Can only sign up with UMass email (5 Points)
 
-- Can only sign up with unique username. Can test with username 'moiz' (5 Points)
+- Can only sign up with unique username. Can test with username 'moiz' (3 Points)
 
-- Passwords must match and be at least 8 characters long (5 Points)
+- Passwords must match and be at least 8 characters long (2 Points)
 
-Log In (15 Points):
+Log In (10 Points):
 
-- Username and password which are used to sign up work and the user is redirected to the home page with 'Log Out' in the header (15 Points)
+- Username and password which are used to sign up work and the user is redirected to the home page with 'Log Out' in the header (10 Points)
 
 Write A Review (10 Points):
 
@@ -118,3 +118,11 @@ Review Page (35 Points):
 Log Out (5 Points):
 
 - When the Log Out link is pressed in the header, the user is redirected to the home page with Log In and Sign Up in the header (5 Points)
+
+Heroku Deployment (5 Points):
+
+- The application is correctly deployed on https://cs326-teammu.herokuapp.com/ (5 Points)
+
+Final Video (5 Points):
+
+- All requirements for the final video are met (5 Points)
