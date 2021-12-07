@@ -56,3 +56,11 @@ nav img{
 .nav-links ul li:hover::after{
     width: 100%;
 }
+
+.linkset {
+    padding-left: 49px;
+}
+
+.cent {
+    text-align: center;
+}

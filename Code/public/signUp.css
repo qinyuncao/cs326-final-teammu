@@ -56,3 +56,7 @@ nav img{
 .nav-links ul li:hover::after{
     width: 100%;
 }
+
+.linkset {
+    margin-left: 85px;
+}
